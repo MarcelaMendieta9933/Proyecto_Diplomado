@@ -1,0 +1,24 @@
+h2
+{
+    text-align: center;
+}
+.modal-body
+{
+    background-color:#C5D2EC;
+    font-family: lato;
+}
+body
+{
+    background-color: #e1e2e4;
+}
+label
+{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.modal-dialog
+{
+    margin-top: 150px;
+}
+

@@ -1,0 +1,49 @@
+/* Estilos para el footer */
+footer {
+	margin-top: 1cm;
+    background-color: #051840; /* Color de fondo del footer */
+    color: #fff; /* Color del texto del footer */
+    padding: 20px 0; /* Espaciado interno del footer */
+    text-align: center; /* Alineación del texto en el centro */
+}
+
+/* Estilos para el contenedor del footer */
+.container {
+    max-width: 1200px; /* Ancho máximo del contenido del footer */
+    margin: 0 auto; /* Centrar el contenido del footer en el medio de la página */
+    display: flex; /* Mostrar los bloques en una fila horizontal */
+    justify-content: space-between; /* Distribuir los bloques uniformemente en el espacio disponible */
+}
+/* Estilos para los bloques del footer */
+.footer-block {
+    flex: 1; /* Cada bloque ocupará un tercio del espacio disponible */
+    padding: 20px; /* Espaciado interno de cada bloque */
+}
+
+/* Estilos para los títulos de los bloques */
+.footer-block h3 {
+    font-size: 18px; /* Tamaño del título */
+    margin-bottom: 10px; /* Espaciado inferior del título */
+}
+
+/* Estilos para las listas en los bloques */
+.footer-block ul {
+    list-style: none; /* Elimina los puntos de lista */
+    padding: 0; /* Elimina el espaciado interno de la lista */
+}
+
+/* Estilos para los elementos de la lista en los bloques */
+.footer-block ul li {
+    margin-bottom: 5px; /* Espaciado inferior entre elementos de la lista */
+}
+
+/* Estilos para los enlaces en los elementos de la lista */
+.footer-block ul li a {
+    color: #fff; /* Color de los enlaces */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+}
+
+/* Estilos para los enlaces cuando están en hover (sobre ellos) */
+.footer-block ul li a:hover {
+    text-decoration: underline; /* Agrega subrayado cuando se pasa el mouse por encima */
+}

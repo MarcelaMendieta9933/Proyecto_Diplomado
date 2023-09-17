@@ -1,0 +1,17 @@
+
+ 
+.container-fluid{
+background-color: #051840;
+}
+ #inicio{
+  color: white;
+ }      
+ .nav-link{
+  color: white;
+ }
+
+nav ul li:hover {
+  background: #324fc1;
+
+}
+ 
