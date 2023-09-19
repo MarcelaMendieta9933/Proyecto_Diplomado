@@ -1,5 +1,3 @@
-
- 
 .container-fluid{
 background-color: #051840;
 }
@@ -14,4 +12,9 @@ nav ul li:hover {
   background: #324fc1;
 
 }
+nav .navbar-toggler
+{
+  background-color: #324fc1;
+}
+
  

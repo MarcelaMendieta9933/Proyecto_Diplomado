@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +26,6 @@
                             <label for="correoElectronico">Correo electronico:</label>
                             <input class="form-control" id="correoElectronico" type="email"  maxlength="64" name="email" placeholder="ejemplo@gmail.com" required>
                         </div>
-            
                         <label for="inquietudes">Describenos tu inquietud:</label>
                         <textarea class="form-control" id="inquietudes" rows="3"></textarea>
                     </form>
