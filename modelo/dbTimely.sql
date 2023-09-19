@@ -43,6 +43,10 @@ logo TEXT,
 PRIMARY KEY(id)
 );
 
+ALTER TABLE modelo
+ADD COLUMN fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN fecha_actualizacion DATETIME;
+
 -- Crear Tabla Contactanos
 USE bbdd_timely;
 CREATE TABLE contactanos(
