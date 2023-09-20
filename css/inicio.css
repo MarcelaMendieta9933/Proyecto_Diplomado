@@ -49,24 +49,39 @@ h2 {
 /* Estilos para la barra de búsqueda */
 .search-bar {
     padding: 30px;
+    align-items: center;
     text-align: center;
     background-color:#C5D2EC;
 }
-
 #search-input {
-    padding: 5px;
-    font-size: 16px;
-    width: 300px;
+    text-align: center;
+    padding: 20px;
+    width: 700px;
+    border-radius: 5px;
+    font-size: 30px;
+    border: 5px solid #06307a; 
 }
-
-#search-button {
-    padding: 5px 10px;
-    font-size: 16px;
+/* Tamaño de letra para pantallas más grandes */
+@media (min-width: 768px) {
+#search-input {
+    font-size: 20px; /* Puedes ajustar este valor según tus preferencias */
+    }
+}
+/* Tamaño de letra para pantallas más pequeñas */
+@media (max-width: 576px) {
+#search-input {
+    font-size: 14px; /* Puedes ajustar este valor según tus preferencias */
+    }  
+}
+  
+/* #search-button {
+    padding: 20px 10px;
+    font-size: 25px;
     background-color: #08126e;
     color: #fff;
     border: none;
     cursor: pointer;
-}
+} */
 
 /* Estilos para la galería */
 .gallery {
@@ -86,6 +101,9 @@ h2 {
     width: 100%;
     height: auto;
     transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* Estilos para resaltar la imagen en hover */

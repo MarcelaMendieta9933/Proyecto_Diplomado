@@ -20,8 +20,11 @@
     </div>
     <!-- Barra de búsqueda -->
     <div class="search-bar">
-        <input type="text" id="search-input" placeholder="Buscar...">
-        <button id="search-button">Buscar</button>
+    <!-- <input type="text" id="search-input" placeholder="\uf002 Cuentanos ¿qué empredimiento estas buscando?"> -->
+    <form class="d-flex justify-content-center align-items-center" role="search">
+      <input id="search-input" class="form-control" type="search" placeholder="&#128269; Cuentanos ¿en qué estas interesado?" aria-label="Buscar">
+    </form>
+    <!--         <button id="search-button" class="icon-search">Buscar</button>-->
     </div>
     <!-- Cuadros de galería -->
     <div class="gallery">
@@ -66,22 +69,6 @@
     <?php include "footer.html"; ?>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-<script>
-    // Función para realizar la búsqueda
-    document.getElementById('search-button').addEventListener('click', function () {
-        var searchTerm = document.getElementById('search-input').value.toLowerCase();
-        var galleryItems = document.querySelectorAll('.gallery-item');
-
-        galleryItems.forEach(function (item) {
-            var tags = item.getAttribute('data-tags').toLowerCase();
-            var image = item.querySelector('img');
-
-            if (tags.includes(searchTerm) || searchTerm === '') {
-                item.style.display = 'block';
-            } else {
-                item.style.display = 'none';
-            }
-        });
-    });
+<script src="../js/inicio.js">
 </script>    
 </html>
