@@ -12,7 +12,7 @@
 
 <?php include "nav.html"; ?>
 
-    <div id="carouselExampleControls" class="carousel slide slider-frame d-block w-100" data-bs-ride="carousel">
+    <div id="carouselControls" class="carousel slide slider-frame d-block w-100" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="../imagenes/slider1.jpg" class="d-block w-100" alt="...">
@@ -27,11 +27,11 @@
                 <img src="../imagenes/slider4.jpg" class="d-block w-100" alt="...">
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Anterior</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselControls" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Siguiente</span>
         </button>
