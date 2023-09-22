@@ -3,7 +3,7 @@
 <div class="pagprincipal">
 	
 <?php
-include('../db.php');
+include('../controlador/conexion_db.php');
 session_start();
 
 if(isset($_SESSION['nombredelusuario']))
@@ -13,11 +13,11 @@ if(isset($_SESSION['nombredelusuario']))
 }
 else
 {
-	header('location: index.html');
+	header('location: mi_emprendedor.html');
 }
 ?>
 <form method="POST">
-<tr><td colspan='2' align="center"><input type="submit" value="Cerrar sesión" name="btncerrar" /></td></tr>
+<tr><td colspan="2" style="align:center"><input type="submit" value="Cerrar sesión" name="btncerrar" /></td></tr>
 </form>
 
 <?php 
@@ -25,7 +25,7 @@ else
 if(isset($_POST['btncerrar']))
 {
 	session_destroy();
-	header('location: index.html');
+	header('location: mi_emprendedor.html');
 }
 	
 ?>
