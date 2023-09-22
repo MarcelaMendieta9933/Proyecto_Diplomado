@@ -9,79 +9,112 @@
     <title>Timely | Inicio</title>
 </head>
 <body>
+
 <?php include "nav.html"; ?>
-    <div class="slider-frame d-block w-100">
-        <ul>
-            <li><img src="../imagenes/slider1.jpg" alt=""></li>
-            <li><img src="../imagenes/slider2.jpg" alt=""></li>
-            <li><img src="../imagenes/slider3.jpg" alt=""></li>
-            <li><img src="../imagenes/slider4.jpg" alt=""></li>
-        </ul>
+
+    <div id="carouselControls" class="carousel slide slider-frame d-block w-100" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../imagenes/slider1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../imagenes/slider2.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../imagenes/slider3.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../imagenes/slider4.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
     </div>
+
     <!-- Barra de búsqueda -->
     <div class="search-bar">
-        <input type="text" id="search-input" placeholder="Buscar...">
-        <button id="search-button">Buscar</button>
+        <form class="d-flex justify-content-center align-items-center" role="search">
+            <input id="search-input" class="form-control" type="search" placeholder="&#128269; Cuentanos ¿en qué estas interesado?" aria-label="Buscar">
+        </form>
     </div>
+
     <!-- Cuadros de galería -->
     <div class="gallery">
         <!-- Cuadro 1 -->
-        <div class="gallery-item" data-tags="Autos">
-            <img src="../imagenes/autos1.jpg" alt="Autos">
+        <div class="card gallery-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-tags="Autos deportivos, autos de lujo, automóviles rápidos">
+            <img src="../imagenes/autos1.jpg" class="card-img-top" alt="Autos">
+            <div class="card-body">
+                <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
+            </div>
         </div>
         <!-- Cuadro 2 -->
-        <div class="gallery-item" data-tags="Comida">
-            <img src="../imagenes/comida1.jpg" alt="Comida">
+        <div class="card gallery-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-tags="Comida">
+            <img src="../imagenes/comida1.jpg" class="card-img-top" alt="Comida">
+            <div class="card-body">
+                <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
+            </div>
         </div>
         <!-- Cuadro 3 -->
-        <div class="gallery-item" data-tags="Barberia">
-            <img src="../imagenes/barberia1.jpg" alt="Barberia">
+        <div class="card gallery-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-tags="Barberia">
+            <img src="../imagenes/barberia1.jpg" class="card-img-top" alt="Barberia">
+            <div class="card-body">
+                <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
+            </div>
         </div>
         <!-- Cuadro 4 -->
-        <div class="gallery-item" data-tags="Autos">
-            <img src="../imagenes/autos2.jpg" alt="Autos">
+        <div class="card gallery-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-tags="Autos">
+            <img src="../imagenes/autos2.jpg" class="card-img-top" alt="Autos">
+            <div class="card-body">
+                <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
+            </div>
         </div>
         <!-- Cuadro 5 -->
-        <div class="gallery-item" data-tags="Comida">
-            <img src="../imagenes/comida2.jpg" alt="Comida">
+        <div class="card gallery-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-tags="Comida">
+            <img src="../imagenes/comida2.jpg" class="card-img-top" alt="Comida">
+            <div class="card-body">
+                <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
+            </div>
         </div>
         <!-- Cuadro 6 -->
-        <div class="gallery-item" data-tags="Barberia">
-            <img src="../imagenes/barberia2.jpg" alt="Barberia">
+        <div class="card gallery-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-tags="Barberia">
+            <img src="../imagenes/barberia2.jpg" class="card-img-top" alt="Barberia">
+            <div class="card-body">
+                <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
+            </div>
         </div>
         <!-- Cuadro 7 -->
-        <div class="gallery-item" data-tags="Autos">
-            <img src="../imagenes/autos3.jpg" alt="Autos">
+        <div class="card gallery-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-tags="Autos">
+            <img src="../imagenes/autos3.jpg" class="card-img-top" alt="Autos">
+            <div class="card-body">
+                <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
+            </div>
         </div>
         <!-- Cuadro 8 -->
-        <div class="gallery-item" data-tags="Comida">
-            <img src="../imagenes/comida3.jpg" alt="Comida">
+        <div class="card gallery-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-tags="Comida">
+            <img src="../imagenes/comida3.jpg" class="card-img-top" alt="Comida">
+            <div class="card-body">
+                <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
+            </div>
         </div>
         <!-- Cuadro 9 -->
-        <div class="gallery-item" data-tags="Barberia">
-            <img src="../imagenes/barberia3.jpg" alt="Barberia">
-        </div>  
+        <div class="card gallery-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-tags="Barberia">
+            <img src="../imagenes/barberia3.jpg" class="card-img-top" alt="Barberia">
+            <div class="card-body">
+                <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
+            </div>
+        </div>
     </div>
 
     <?php include "footer.html"; ?>
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-<script>
-    // Función para realizar la búsqueda
-    document.getElementById('search-button').addEventListener('click', function () {
-        var searchTerm = document.getElementById('search-input').value.toLowerCase();
-        var galleryItems = document.querySelectorAll('.gallery-item');
-
-        galleryItems.forEach(function (item) {
-            var tags = item.getAttribute('data-tags').toLowerCase();
-            var image = item.querySelector('img');
-
-            if (tags.includes(searchTerm) || searchTerm === '') {
-                item.style.display = 'block';
-            } else {
-                item.style.display = 'none';
-            }
-        });
-    });
+<script src="../js/inicio.js">
 </script>    
 </html>
