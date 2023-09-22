@@ -13,8 +13,6 @@ token VARCHAR(40),
 PRIMARY KEY(id)
 );
 
-USE bbdd_timely;
-
 ALTER TABLE usuarios
 ADD UNIQUE(usuario);
 
@@ -23,7 +21,6 @@ MODIFY contraseña VARCHAR(200);
 
 ALTER TABLE usuarios
 MODIFY token VARCHAR(200);
-
 
 -- Crear Tabla emprendedores
 USE bbdd_timely;
