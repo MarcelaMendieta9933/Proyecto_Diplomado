@@ -1,6 +1,6 @@
 <?php
 
-include('../db.php');
+include('conexion_db.php');
 
 if(isset($_POST["accion"]))
 {
@@ -22,11 +22,11 @@ if(isset($_POST["accion"]))
         { 
             session_start();
             $_SESSION['nombredelusuario']=$nombre;
-            header("Location: principal.php");
+            header("Location: ../vistas/entrada_principal.php");
         }
         else
         {
-            echo "<script> alert('Usuario o contraseña incorrecto. ');window.location= 'index.html' </script>"; 
+            echo "<script> alert('Usuario o contraseña incorrecto. ');window.location= '../vistas/mi_emprendedor.html' </script>"; 
         }
     }
 
@@ -43,7 +43,7 @@ if(isset($_POST["accion"]))
             
             if(mysqli_query($conn,$queryregistrar))
             {
-                echo "<script> alert('Usuario registrado: $nombre');window.location= 'index.html' </script>";
+                echo "<script> alert('Usuario registrado: $nombre');window.location= '../vistas/mi_emprendedor.html' </script>";
             }
             else 
             {
@@ -52,7 +52,7 @@ if(isset($_POST["accion"]))
         }
         else
         {
-            echo "<script> alert('No puedes registrar a este usuario: $nombre');window.location= 'index.html' </script>";
+            echo "<script> alert('No puedes registrar a este usuario: $nombre');window.location= '../vistas/mi_emprendedor.html' </script>";
         }
     } 
 }
