@@ -4,8 +4,11 @@ body
 }  
 .bienvenida
 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-top: 300px;
+    height: 100vh;
     color: white;
     text-align: center;
 }  

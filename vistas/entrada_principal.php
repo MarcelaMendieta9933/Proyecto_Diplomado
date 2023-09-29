@@ -1,4 +1,6 @@
-<link rel="stylesheet" href="../../css/login.css">
+<link rel="icon" type="image/x-icon" href="../imagenes/logo.png" />
+<link rel="stylesheet" href="../css/mi_emprendedor.css">
+<title>Timely | Emprendedor</title>
 <div class="cajafuera">
 <div class="pagprincipal">
 	
@@ -13,7 +15,7 @@ if(isset($_SESSION['nombredelusuario']))
 }
 else
 {
-	header('location: mi_emprendedor.html');
+	header('location: ../vistas/mi_emprendedor.html');
 }
 ?>
 <form method="POST">
@@ -25,7 +27,7 @@ else
 if(isset($_POST['btncerrar']))
 {
 	session_destroy();
-	header('location: mi_emprendedor.html');
+	header('location: ../vistas/mi_emprendedor.html');
 }
 	
 ?>
