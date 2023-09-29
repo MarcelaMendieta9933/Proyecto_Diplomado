@@ -16,7 +16,7 @@
 }
 .nav_admnistrador{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 @media (max-width: 768px) {
@@ -26,24 +26,36 @@
 }
 .imagen_nav{
     max-width: 100%;
+    text-align: left;
+    justify-content: left;
+    width: 90px;
+    height: auto;
 }
 .bienvenida_adminstrador
 {
     border-radius: 15px;
     width: auto;
     height: 80px;
-    background-color: #06307a; /* Color de fondo del cuadro */
+    background-color: #06307a; 
     margin-left: 20px;
-    display: flex; /* Agregamos flexbox al contenedor */
-    justify-content: center; /* Centra horizontalmente el contenido */
-    align-items: center; /* Centra verticalmente el contenido */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
     color: white;
     text-align: center;
     padding: 30px 30px;
     color: white;
-
 }
-#tabla_usuarios
+
+.usuario{
+    max-width: 50%;
+    text-align: right;
+    justify-content: right;
+    width: 70px;
+    height: auto;
+}
+
+#tabla_usuarios, .table
 {
     margin-top: 10px;
     border: 2px solid #051840;
@@ -64,6 +76,24 @@
 /* Cambiar el color del texto de los botones de navegación (Previous y Next) */
 .pagination .page-item .page-link:hover {
     background-color: #324fc1;
+}
+
+#btn_aed
+{
+    text-align: right; 
+}
+.btn
+{
+    
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+}
+
+#miBoton.color_boton_delete
+{
+    background-color: #A10808;
+    color: white;
 }
 
 
