@@ -12,10 +12,11 @@
     <div class="fondo">
         <div class="caja">
             <nav class="nav_admnistrador">
-                <img class="imagen_nav" src="../imagenes/logoTimely.png" alt="Timely" width="70" height="70">
+                <img class="imagen_nav" src="../imagenes/logoTimely.png" alt="Timely">
                 <div class="bienvenida_adminstrador">Bienvenido Administrador {cambiar} a Timely</div>
+                <img class="usuario" src="../imagenes/usuario.png" alt="usuario">
             </nav>
-            <button>Agregar</button>
+            <button type="button" class="btn btn-primary">Agregar</button>
             <table class="table table-bordered" id="tabla_usuarios">
                 <thead>
                     <tr>
@@ -27,27 +28,9 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td><button>borrar</button><br><button>Editar</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td><button>borrar</button><br><button>Editar</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry the Bird</td>
-                        <td></td>
-                        <td>@twitter</td>
-                        <td><button>borrar</button><br><button>Editar</button></td>
-                    </tr>
+                    <?php
+                     include("../controlador/motrar_usu.php");
+                     ?>
                     </tbody>
             </table>
             <footer>
@@ -69,6 +52,7 @@
             </footer>
         </div>
     </div>
+    <script src="../js/borrar_usu.js"></script>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>
