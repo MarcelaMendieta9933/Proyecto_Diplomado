@@ -130,7 +130,7 @@ body{
 /* Estilos para el indicador en cada cuadro */
 .gallery-item::before {
     content: attr(data-tags);
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(81, 76, 76, 0.7);
     color: #e1e2e4;
     position: absolute;
     top: 0;
