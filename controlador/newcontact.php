@@ -23,9 +23,14 @@ $sql = "INSERT INTO contactanos (nombre , correo, descripcion) VALUES ('$nombre'
 
 if ($conn->query($sql) === TRUE) {
     echo "<script> Swal.fire(
-      'Gracias por Contactornos',
+      'Gracias por Contactarnos',
       'Mensaje Enviado',
-      'success');window.location='../vistas/inicio.php'
+      'success'
+    );
+    
+    setTimeout(function() {
+      window.location='../vistas/inicio.php';
+    }, 1500);
     </script>";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

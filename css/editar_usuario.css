@@ -1,0 +1,84 @@
+/* Estilos para el fondo y la caja principal */
+.fondo {
+    background-color: #C5D2EC;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.caja {
+    background-color: #e1e2e4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    text-align: center;
+}
+
+/* Estilos para el título */
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para los campos de entrada y los botones */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-control {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#nuevaContrasena {
+    margin-top: 10px;
+}
+
+.btn-secondary,
+.btn-primary {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background-color: #ccc;
+    color: #333;
+}
+
+.btn-primary {
+    background-color: #051840;
+    color: white;
+}
+
+/* Estilos para el botón Cancelar */
+.btn-secondary:hover {
+    background-color: #999;
+}
+
+/* Estilos para el botón Guardar Cambios */
+.btn-primary:hover {
+    background-color: #03061a;
+}
+
+/* Estilos para el enlace de redirección a página_administrador.php */
+.link-volver {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #051840;
+    text-decoration: none;
+}
+
+.link-volver:hover {
+    text-decoration: underline;
+}

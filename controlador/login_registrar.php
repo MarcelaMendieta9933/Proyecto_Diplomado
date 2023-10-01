@@ -22,7 +22,15 @@ if(isset($_POST["accion"]))
         { 
             session_start();
             $_SESSION['nombredelusuario']=$nombre;
-            header("Location: ../vistas/entrada_principal.php");
+            if($mostrar['nivel']=='usuario') 
+            {
+                header("Location: ../vistas/pagina_emprendedor.php");
+            }
+            else
+            {
+                header("Location: ../vistas/pagina_administrador.php");
+            }
+            
         }
         else
         {
@@ -39,7 +47,7 @@ if(isset($_POST["accion"]))
         if ($nr == 0)
         {
             $pass_fuerte = password_hash($pass, PASSWORD_BCRYPT);
-            $queryregistrar = "INSERT INTO usuarios(usuario,correo,nivel,contraseña) values ('$nombre','$nivel','$correo','$pass_fuerte')";
+            $queryregistrar = "INSERT INTO usuarios(usuario,nivel,correo,contraseña) values ('$nombre','$nivel','$correo','$pass_fuerte')";
             
             if(mysqli_query($conn,$queryregistrar))
             {
