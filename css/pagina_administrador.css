@@ -1,0 +1,70 @@
+.fondo{
+    background-color: #C5D2EC;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.caja{
+    background-color: #e1e2e4;
+    margin-left: 50px;
+    margin-right:  50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 15px;
+    padding: 10px 20px 10px 20px;
+    height: auto;
+}
+.nav_admnistrador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 768px) {
+    .caja {
+        max-height: 80%; /* En pantallas más pequeñas, la caja ocupará todo el ancho disponible */
+    }
+}
+.imagen_nav{
+    max-width: 100%;
+}
+.bienvenida_adminstrador
+{
+    border-radius: 15px;
+    width: auto;
+    height: 80px;
+    background-color: #06307a; /* Color de fondo del cuadro */
+    margin-left: 20px;
+    display: flex; /* Agregamos flexbox al contenedor */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    color: white;
+    text-align: center;
+    padding: 30px 30px;
+    color: white;
+
+}
+#tabla_usuarios
+{
+    margin-top: 10px;
+    border: 2px solid #051840;
+    border-radius: 15px;
+}
+.pagination
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cambiar el color de fondo de los botones de navegación (Previous y Next) */
+.pagination .page-item .page-link {
+    background-color: #06307a;
+    color: white; /* Cambia #06307a por el color de fondo deseado */
+}
+/* Cambiar el color del texto de los botones de navegación (Previous y Next) */
+.pagination .page-item .page-link:hover {
+    background-color: #324fc1;
+}
+
+
+
