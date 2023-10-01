@@ -119,7 +119,7 @@
             <footer>
                 <ul class="pagination">
                     <li class="page-item">
-                      <a class="page-link" href="../vistas/pagina_administrador.html" aria-label="Previous">
+                      <a class="page-link" href="../vistas/pagina_administrador.php" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                       </a>
                     </li>
@@ -127,7 +127,7 @@
                     <li class="page-item"><a class="page-link" href="#">2</a></li>
                     <li class="page-item"><a class="page-link" href="#">3</a></li>
                     <li class="page-item">
-                      <a class="page-link" href="../vistas/pagina_administrador.html" aria-label="Next">
+                      <a class="page-link" href="../vistas/pagina_administrador.php" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                       </a>
                     </li>
