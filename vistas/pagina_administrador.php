@@ -31,7 +31,7 @@
                  a Timely</div>
                 <img class="usuario" src="../imagenes/usuario.png" alt="usuario">
             </nav>
-            <form method="POST" style="textl">
+            <form method="POST" >
                 <input type="submit" class="close-button" value="Cerrar sesión" name="btncerrar" />
                 </form>
                 <?php 
