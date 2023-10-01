@@ -45,13 +45,36 @@
     padding: 30px 30px;
     color: white;
 }
-
 .usuario{
     max-width: 50%;
     text-align: right;
     justify-content: right;
     width: 70px;
     height: auto;
+}
+
+.close-button {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    max-width: 50%;
+    width: 120px;
+    height: auto;
+    float: right;
+    margin-bottom: 10px;
+}
+
+.close-button:hover {
+    background-color: #473232; 
+}
+
+@media (max-width: 768px) {
+    .close-button {
+        width: auto; /* Restaura el ancho automático para que se ajuste al contenido */
+        max-width: 100%; /* Asegura que el botón no desborde su contenedor */
+        margin-top: 10px; /* Agrega espacio entre el botón y la imagen */
+    }
 }
 
 .slider-frame {
@@ -86,7 +109,7 @@
     transform: translateY(-50%);
     color: white;
     border: none;
-    padding: 50px 50px;
+    padding: 30px;
     cursor: pointer;
     z-index: 1;
 }
@@ -113,8 +136,9 @@
 	100% {margin-left: -300%;}
 }
 
-.cuadro {
+.cuadros {
     margin-top: 40px;
+    margin-bottom: 30px;
     width: 400px;
     height: 200px;
     padding: 20px;

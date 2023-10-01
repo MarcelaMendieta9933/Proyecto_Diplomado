@@ -96,5 +96,19 @@
     color: white;
 }
 
+.close-button {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    max-width: 50%;
+    width: 120px;
+    height: auto;
+    float: right;
+    margin-bottom: 10px;
+}
 
+.close-button:hover {
+    background-color: #473232; 
+}
 

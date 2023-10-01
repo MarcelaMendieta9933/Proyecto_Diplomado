@@ -12,11 +12,37 @@
     <div class="fondo">
         <div class="caja">
             <nav class="nav_emprendedor">
-                <img class="imagen_nav" src="../imagenes/logoTimely.png" alt="Timely">
-                <div class="bienvenida_emprendedor">Bienvenid@ Emprended@r {cambiar} a Timely</div>
-                <img class="usuario" src="../imagenes/usuario.png" alt="usuario">
-            </nav>
+                <img class="imagen_nav" src="../imagenes/logoTimely.png" name="" alt="Timely">
+                <div class="bienvenida_emprendedor">Bienvenido Emprendedor 
+                <?php
+                include('../controlador/conexion_db.php');
+                session_start();
 
+                if(isset($_SESSION['nombredelusuario']))
+                {
+                  $usuarioingresado = $_SESSION['nombredelusuario'];
+                  echo "$usuarioingresado";
+                }
+                else
+                {
+                  header('location: ../vistas/mi_emprendedor.html');
+                }
+                ?>  
+                 a Timely</div>
+                <img class="usuario" src="../imagenes/usuario.png" alt="usuario" onclick="PopupUser()">
+                
+            </nav>
+            <form method="POST">
+                <input type="submit" class="close-button" value="Cerrar sesión" name="btncerrar" />
+                </form>
+                <?php 
+                if(isset($_POST['btncerrar']))
+                {
+                    session_destroy();
+                    header('location: ../vistas/mi_emprendedor.html');
+                }
+                ?> 
+                
             <div id="carouselControls" class="carousel slide slider-frame d-block w-100" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -42,11 +68,8 @@
                 </button>
             </div>
 
-            <div class="cuadro">
+            <div class="cuadros" id="cuadro_empredimiento" onclick="agregarCuadro(this)">
                 crear emprendimiento
-                <br>
-                <br>
-                +
                 <!-- <div class="cuadro" id="cuadro1" onclick="agregarCuadro(this)">
                     <input type="text" placeholder="Ingrese contenido" class="contenido">
                 </div> -->
@@ -55,6 +78,7 @@
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="../js/ventana_sesion.js"></script>
 <script>
 //     let contador = 1;
 
