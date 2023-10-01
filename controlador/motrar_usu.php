@@ -1,7 +1,7 @@
 <?php
 include 'conexion_db.php';
 
-$consulta = "SELECT id,	usuario, nivel, correo FROM usuarios WHERE nivel='Usuario';";
+$consulta = "SELECT id,	usuario, nivel, correo FROM usuarios;";
 $resultado = mysqli_query($conn, $consulta);
 
 // Generar filas de la tabla
@@ -12,7 +12,7 @@ while ($fila = mysqli_fetch_assoc($resultado)) {
     echo "<td>" . $fila['nivel'] . "</td>";
     echo "<td>" . $fila['correo'] . "</td>";
     echo "<td>";
-    echo "<button data-id='" . $fila['id'] . "' type=\"button\" class=\"btn btn-warning\" onclick='editarUsuario(this)'>Editar</button>";
+    echo "<a href='editar_usuario.php?id=" . $fila['id'] . "' class='btn btn-warning'>Editar</a>";
     echo "<button onclick='borrarUsuario(" . $fila['id'] . ")' type=\"button\" class=\"btn btn-danger\">Borrar</button>";
     echo "</td>";
     echo "</tr>";
