@@ -29,9 +29,7 @@
                 ?>  
                 
                  a Timely</div>
-                <img class="usuario" src="../imagenes/usuario.png" alt="usuario">
-            </nav>
-            <form method="POST" >
+                 <form method="POST" >
                 <input type="submit" class="close-button" value="Cerrar sesión" name="btncerrar" />
                 </form>
                 <?php 
@@ -41,10 +39,17 @@
                     header('location: ../vistas/mi_emprendedor.html');
                 }
                 ?>
-            <!-- Button trigger modal -->
+            </nav>
+            
+<div class="busqueda"> 
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Agregar Usuarios
   </button>
+    <div class="barra_busqueda">
+        <input type="text" class="caja_busqueda" placeholder="Buscar por usuario">
+        <button type="button" class="btn btn-success">Buscar</button>
+    </div>
+</div>
   
   <!-- Modal -->
 
