@@ -1,3 +1,8 @@
+.body
+{
+    background-color: #C5D2EC;
+}
+
 .fondo{
     background-color: #C5D2EC;
     height: 100%;
@@ -47,14 +52,6 @@
     color: white;
 }
 
-.usuario{
-    max-width: 50%;
-    text-align: right;
-    justify-content: right;
-    width: 70px;
-    height: auto;
-}
-
 #tabla_usuarios, .table
 {
     margin-top: 10px;
@@ -97,18 +94,40 @@
 }
 
 .close-button {
-    background-color: #ff0000;
+    background-color: #A10808;
     color: white;
     border: none;
     padding: 5px 10px;
-    max-width: 50%;
-    width: 120px;
-    height: auto;
+    width: 125px;
+    height: 38px;
     float: right;
     margin-bottom: 10px;
+    border-radius: 5px;
 }
 
 .close-button:hover {
     background-color: #473232; 
 }
 
+@media (max-width: 768px) {
+    .close-button {
+        width: auto;
+        max-width: 100%;
+        margin-top: 10px;
+    }
+}
+.busqueda
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.barra_busqueda {
+    display: inline-block;
+    vertical-align: middle;
+}
+.caja_busqueda {
+    vertical-align: middle; 
+    margin-right: 5px; 
+    height: 38px;
+}
