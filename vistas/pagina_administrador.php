@@ -29,9 +29,7 @@
                 ?>  
                 
                  a Timely</div>
-                <img class="usuario" src="../imagenes/usuario.png" alt="usuario">
-            </nav>
-            <form method="POST" >
+                 <form method="POST" >
                 <input type="submit" class="close-button" value="Cerrar sesión" name="btncerrar" />
                 </form>
                 <?php 
@@ -41,10 +39,17 @@
                     header('location: ../vistas/mi_emprendedor.html');
                 }
                 ?>
-            <!-- Button trigger modal -->
+            </nav>
+            
+<div class="busqueda"> 
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Agregar Usuarios
   </button>
+    <div class="barra_busqueda">
+        <input type="text" class="caja_busqueda" placeholder="Buscar por usuario">
+        <button type="button" class="btn btn-success">Buscar</button>
+    </div>
+</div>
   
   <!-- Modal -->
 
@@ -119,7 +124,7 @@
             <footer>
                 <ul class="pagination">
                     <li class="page-item">
-                      <a class="page-link" href="../vistas/pagina_administrador.html" aria-label="Previous">
+                      <a class="page-link" href="../vistas/pagina_administrador.php" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                       </a>
                     </li>
@@ -127,7 +132,7 @@
                     <li class="page-item"><a class="page-link" href="#">2</a></li>
                     <li class="page-item"><a class="page-link" href="#">3</a></li>
                     <li class="page-item">
-                      <a class="page-link" href="../vistas/pagina_administrador.html" aria-label="Next">
+                      <a class="page-link" href="../vistas/pagina_administrador.php" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                       </a>
                     </li>

@@ -1,3 +1,8 @@
+.body
+{
+    background-color: #C5D2EC;
+}
+
 .fondo{
     background-color: #C5D2EC;
     min-height: 100%;
@@ -54,15 +59,15 @@
 }
 
 .close-button {
-    background-color: #ff0000;
+    background-color: #A10808;
     color: white;
     border: none;
     padding: 5px 10px;
-    max-width: 50%;
     width: 120px;
-    height: auto;
+    height: 38px;
     float: right;
     margin-bottom: 10px;
+    border-radius: 5px;
 }
 
 .close-button:hover {

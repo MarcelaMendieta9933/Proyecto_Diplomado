@@ -1,0 +1,17 @@
+.informacion_general {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contacto_empredimiento {
+    display: flex;
+    align-items: center;
+}
+
+.contacto_empredimiento img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
