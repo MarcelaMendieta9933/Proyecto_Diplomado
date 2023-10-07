@@ -1,0 +1,31 @@
+body{
+    background-color: #C5D2EC;
+}
+
+h2
+{
+    text-align: center;
+}
+.modal-content{
+    border: 1px solid black;
+}
+
+.modal-body
+{
+    background-color: #e1e2e4;
+    font-family: lato;
+   
+}
+
+label
+{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.modal-dialog
+{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
