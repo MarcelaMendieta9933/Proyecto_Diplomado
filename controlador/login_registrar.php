@@ -22,6 +22,7 @@ if(isset($_POST["accion"]))
         { 
             session_start();
             $_SESSION['nombredelusuario']=$nombre;
+            $_SESSION['idusuario']=$mostrar['id'];
             if($mostrar['nivel']=='usuario') 
             {
                 header("Location: ../vistas/pagina_emprendedor.php");
