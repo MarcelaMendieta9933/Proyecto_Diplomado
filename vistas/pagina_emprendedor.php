@@ -21,7 +21,9 @@
                 if(isset($_SESSION['nombredelusuario']))
                 {
                   $usuarioingresado = $_SESSION['nombredelusuario'];
+                  
                   echo "$usuarioingresado";
+                  
                 }
                 else
                 {
@@ -30,7 +32,19 @@
                 ?>  
                  a Timely</div>
                 <img class="usuario" src="../imagenes/usuario.png" alt="usuario" onclick="PopupUser()">
-                
+                <?php 
+                if(isset($_SESSION['idusuario'])){
+                    $id = $_SESSION['idusuario'];
+                    
+                    $queryVerify = mysqli_query($conn,"SELECT * FROM `emprendedores` WHERE fk_id_usu = $id;");
+                    $nr= mysqli_num_rows($queryVerify);
+                    if ($nr == 0) {
+                        // El resultado de la consulta es vacío, redirigir al usuario a registroemprendedor.php
+                        header('location: ../vistas/registroemprendedor.php');
+                        exit(); // Es importante salir del script después de enviar el encabezado de redirección
+                    }
+                }
+                ?>
             </nav>
             <form method="POST">
                 <input type="submit" class="close-button" value="Cerrar sesión" name="btncerrar" />
