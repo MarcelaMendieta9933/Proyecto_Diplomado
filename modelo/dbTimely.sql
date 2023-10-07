@@ -56,6 +56,9 @@ ALTER TABLE modelo
 ADD COLUMN fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 ADD COLUMN fecha_actualizacion DATETIME;
 
+ALTER TABLE `modelo` CHANGE `imagenes` `Video` TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL;
+ALTER TABLE `modelo` CHANGE `Video` `video` TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL;
+
 -- Crear Tabla Contactanos
 USE bbdd_timely;
 CREATE TABLE contactanos(
@@ -66,3 +69,14 @@ descripcion TEXT,
 fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY(id)
 );
+
+-- Triger  
+DELIMITER //
+CREATE TRIGGER actualiza_fecha
+BEFORE UPDATE ON modelo
+FOR EACH ROW
+BEGIN
+    SET NEW.fecha_actualizacion = NOW();
+END;
+//
+DELIMITER ;

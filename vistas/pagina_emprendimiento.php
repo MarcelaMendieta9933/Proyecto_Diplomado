@@ -29,55 +29,9 @@
         </div>
     </div>
 
-    <div>
-        cuadro de titulo productos y servicios
-    </div>
-
-
-    <!-- Cuadros de galería -->
-    <div class="gallery">
-        <!-- Cuadro 1 -->
-        <div class="card gallery-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-tags="Autos deportivos, autos de lujo, automóviles rápidos">
-            <img src="../imagenes/autos1.jpg" class="card-img-top" alt="Autos">
-            <div class="card-body">
-                <h6 class="card-title">Producto/servicio</h6> <!-- centrar -->
-            </div>
-        </div>
-        <!-- Cuadro 2 -->
-        <div class="card gallery-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-tags="Comida">
-            <img src="../imagenes/comida1.jpg" class="card-img-top" alt="Comida">
-            <div class="card-body">
-                <h6 class="card-title">Producto/servicio</h5>
-            </div>
-        </div>
-        <!-- Cuadro 3 -->
-        <div class="card gallery-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-tags="Barberia">
-            <img src="../imagenes/barberia1.jpg" class="card-img-top" alt="Barberia">
-            <div class="card-body">
-                <h5 class="card-title">Producto/servicio</h5>
-            </div>
-        </div>
-        <!-- Cuadro 4 -->
-        <div class="card gallery-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-tags="Autos">
-            <img src="../imagenes/autos2.jpg" class="card-img-top" alt="Autos">
-            <div class="card-body">
-                <h5 class="card-title">Producto/servicio</h5>
-            </div>
-        </div>
-        <!-- Cuadro 5 -->
-        <div class="card gallery-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-tags="Comida">
-            <img src="../imagenes/comida2.jpg" class="card-img-top" alt="Comida">
-            <div class="card-body">
-                <h5 class="card-title">Producto/servicio</h5>
-            </div>
-        </div>
-        <!-- Cuadro 6 -->
-        <div class="card gallery-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-tags="Barberia">
-            <img src="../imagenes/barberia2.jpg" class="card-img-top" alt="Barberia">
-            <div class="card-body">
-                <h5 class="card-title">Producto/servicio</h5>
-            </div>
-        </div>
+    <div class="video-section">
+        <!-- Aquí puedes insertar tu video -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
     </div>
 
     <?php include "footer.html"; ?>
