@@ -67,13 +67,14 @@
                     <span class="visually-hidden">Siguiente</span>
                 </button>
             </div>
-
-            <div class="cuadros" id="cuadro_empredimiento" onclick="agregarCuadro(this)">
-                crear emprendimiento
-                <!-- <div class="cuadro" id="cuadro1" onclick="agregarCuadro(this)">
-                    <input type="text" placeholder="Ingrese contenido" class="contenido">
-                </div> -->
-            </div>
+            <a href="agregar_empr.php">
+                <div class="cuadros" id="cuadro_empredimiento" onclick="agregarCuadro(this)">
+                    crear emprendimiento
+                    <!-- <div class="cuadro" id="cuadro1" onclick="agregarCuadro(this)">
+                        <input type="text" placeholder="Ingrese contenido" class="contenido">
+                    </div> -->
+                </div>
+            </a>
         </div>
     </div>
 </body>
