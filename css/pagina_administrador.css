@@ -1,3 +1,8 @@
+.body
+{
+    background-color: #C5D2EC;
+}
+
 .fondo{
     background-color: #C5D2EC;
     height: 100%;
@@ -21,7 +26,14 @@
 }
 @media (max-width: 768px) {
     .caja {
-        max-height: 80%; /* En pantallas más pequeñas, la caja ocupará todo el ancho disponible */
+        max-height: 80%;
+        max-width: 100%;
+    }
+    .fondo{
+        background-color: #C5D2EC;
+        height: 100%;
+        width: 100%;
+        position: absolute;
     }
 }
 .imagen_nav{
@@ -45,14 +57,6 @@
     text-align: center;
     padding: 30px 30px;
     color: white;
-}
-
-.usuario{
-    max-width: 50%;
-    text-align: right;
-    justify-content: right;
-    width: 70px;
-    height: auto;
 }
 
 #tabla_usuarios, .table
@@ -96,5 +100,55 @@
     color: white;
 }
 
+.close-button {
+    background-color: #A10808;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    width: 125px;
+    height: 38px;
+    float: right;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
 
+.close-button:hover {
+    background-color: #473232; 
+}
 
+.busqueda
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.barra_busqueda {
+    display: inline-block;
+    vertical-align: middle;
+}
+.caja_busqueda {
+    vertical-align: middle; 
+    margin-right: 5px; 
+    height: 38px;
+}
+@media (max-width: 768px) {
+    .busqueda {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .barra_busqueda {
+        margin-top: 10px;
+    }
+    .caja_busqueda { 
+        height: 38px;
+        width: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bienvenida_adminstrador {
+        font-size: 14px; /* Cambia el tamaño de fuente para pantallas pequeñas */
+        height: auto; /* Restaura la altura automática para que se ajuste al contenido */
+        padding: 10px; /* Ajusta el espacio interno */
+    }
+}

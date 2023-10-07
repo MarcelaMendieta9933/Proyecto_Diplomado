@@ -1,0 +1,134 @@
+/* Estilos para el fondo y la caja principal */
+body {
+    background-color: #C5D2EC;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    background-color: #e1e2e4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    width: 800px;
+    text-align: center;
+}
+
+/* Estilos para los campos de entrada y los botones */
+label,
+input,
+textarea {
+    display: block;
+    margin-bottom: 15px;
+    text-align: left;
+    
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="file"] {
+    padding: 10px;
+    font-size: 16px;
+}
+
+input[type="text"],
+textarea {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Estilos para el botón Agregar Producto */
+#add-product {
+    background-color: #051840;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#add-product:hover {
+    background-color: #03061a;
+}
+
+/* Estilos para el botón Enviar */
+button[type="submit"] {
+    background-color: #051840;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Estilos para el botón Cancelar */
+.cancel-button {
+    background-color: #ccc; /* Cambia el color de fondo a gris claro */
+    color: #333; /* Cambia el color del texto a gris oscuro */
+    border: 1px solid #888; /* Agrega un borde delgado */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px; /* Agrega margen derecho para separarlos un poco */
+}
+
+/* Cambia el estilo del botón Cancelar cuando se coloca el cursor sobre él */
+.cancel-button:hover {
+    background-color: #999; /* Cambia el color de fondo al pasar el cursor */
+    color: #fff; /* Cambia el color del texto a blanco */
+}
+
+
+button[type="submit"]:hover {
+    background-color: #03061a;
+}
+
+/* Estilos para el botón Quitar */
+.remove-product {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    float: right;
+}
+
+.remove-product:hover {
+    background-color: #d32f2f;
+}
+
+/* Estilos para el enlace de redirección a otra página */
+.link-volver {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #051840;
+    text-decoration: none;
+}
+
+.link-volver:hover {
+    text-decoration: underline;
+}

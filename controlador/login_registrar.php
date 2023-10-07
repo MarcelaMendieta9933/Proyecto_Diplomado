@@ -22,7 +22,16 @@ if(isset($_POST["accion"]))
         { 
             session_start();
             $_SESSION['nombredelusuario']=$nombre;
-            header("Location: ../vistas/entrada_principal.php");
+            $_SESSION['idusuario']=$mostrar['id'];
+            if($mostrar['nivel']=='usuario') 
+            {
+                header("Location: ../vistas/pagina_emprendedor.php");
+            }
+            else
+            {
+                header("Location: ../vistas/pagina_administrador.php");
+            }
+            
         }
         else
         {
