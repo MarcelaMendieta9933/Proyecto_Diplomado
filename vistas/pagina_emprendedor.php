@@ -134,6 +134,9 @@
                     <span class="visually-hidden">Siguiente</span>
                 </button>
             </div>
+            <div class="gallery" id="emprendimientos">
+                <script src="../js/galeria_in.js"></script>
+            </div>
             <div class="cuadros" id="cuadro_empredimiento" onclick="redireccionar()">
                 Crear emprendimiento
             </div>
