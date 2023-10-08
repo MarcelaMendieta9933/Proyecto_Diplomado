@@ -3,45 +3,63 @@
 <head>
     <title>Formulario de Emprendimiento</title>
     <link rel="stylesheet" type="text/css" href="../css/agregar_empr.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-<?php
-    include('../controlador/conexion_db.php');
-    session_start();
+<div class="fondo">
+    <div class="modal position-static mx-auto d-block" tabindex="0">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Formulario de Emprendimiento 
+                    <?php
+                    include('../controlador/conexion_db.php');
+                    session_start();
 
-    if(isset($_SESSION['nombredelusuario']))
-    {
-        $usuarioingresado = $_SESSION['nombredelusuario'];
-        echo "$usuarioingresado";
-    }
-    else
-    {
-        header('location: ../vistas/mi_emprendedor.html');
-    }
-    ?>
-    <h1>Formulario de Emprendimiento</h1>
-    <form action="../controlador/cargar_empr.php" method="POST" enctype="multipart/form-data">
-        <div class="emprendimiento-info">
-            <label for="nombre">Nombre del Emprendimiento:</label>
-            <input type="text" name="nombre" required>
-            <label for="descripcion">Descripción:</label>
-            <textarea name="descripcion" required></textarea>
-            <label for="whatsapp">Número de WhatsApp:</label>
-            <input type="text" name="whatsapp" required>
-            <label for="logo">Logo del Emprendimiento:</label>
-            <input type="file" name="logo" accept="image/*" required>
-        </div>
-        <div id="productFields">
-            <div class="product">
-                <label for="image">Enlace del Video:</label>
-                <input type="text" name="image[]" required>
+                    if(isset($_SESSION['nombredelusuario']))
+                    {
+                        $usuarioingresado = $_SESSION['nombredelusuario'];
+                    }
+                    else
+                    {
+                        header('location: ../vistas/mi_emprendedor.html');
+                    }
+                    ?>
+                    </h5>
+                </div>
+                <div class="modal-body">
+                    <form action="../controlador/cargar_empr.php" method="POST" enctype="multipart/form-data">
+                        <div class="form-group emprendimiento-info">
+                            <label for="nombre">Nombre del Emprendimiento:</label>
+                            <input class="form-control"  type="text" name="nombre" required autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="descripcion">Descripción:</label>
+                            <textarea class="form-control"  name="descripcion" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsapp">Número de WhatsApp:</label>
+                            <input class="form-control"  type="text" name="whatsapp" required autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="logo">Logo del Emprendimiento:</label>
+                            <input class="form-control" type="file" name="logo" accept="image/*" required>
+                        </div>
+                        <div id="productFields">
+                            <div class="form-group product">
+                                <label for="image">Enlace del Video:</label>
+                                <input class="form-control" type="text" name="image[]" required autocomplete="off">
+                            </div>
+                        </div>
+                        <br>
+                        <button type="button" id="cancelButton" class="btn btn-secondary">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
             </div>
         </div>
-        
-        <button type="button" id="cancelButton" class="cancel-button">Cancelar</button>
-        <button type="submit">Enviar</button>
-
-    </form>
+    </div>
+</div>  
 </body>
 <script>
     // Obtener una referencia al botón de "Cancelar"
@@ -53,7 +71,7 @@
         window.history.back();
     });
 </script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>
 
 

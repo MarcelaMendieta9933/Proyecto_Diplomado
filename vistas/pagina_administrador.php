@@ -46,8 +46,8 @@
     Agregar Usuarios
   </button>
     <div class="barra_busqueda">
-        <input type="text" class="caja_busqueda" placeholder="Buscar por usuario">
-        <button type="button" class="btn btn-success">Buscar</button>
+        <input type="text" class="caja_busqueda" id="inputBusqueda" placeholder="Buscar por usuario">
+        <button type="button" class="btn btn-success" onclick="buscarUsuario()">Buscar</button>
     </div>
 </div>
   
@@ -104,12 +104,11 @@
     </div>
   </div>
 
-  
+        <div class="table-responsive">
             <table class="table table-bordered" id="tabla_usuarios">
                 <thead>
                     <tr>
-                        <th scope="col">id</th>
-                        <th scope="col">Uuario</th>
+                        <th scope="col">Usuario</th>
                         <th scope="col">Nivel</th>
                         <th scope="col">Correo</th>
                         <th scope="col">Opciones</th>
@@ -122,27 +121,17 @@
                     </tbody>
             </table>
             <footer>
-                <ul class="pagination">
-                    <li class="page-item">
-                      <a class="page-link" href="../vistas/pagina_administrador.php" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                      </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                      <a class="page-link" href="../vistas/pagina_administrador.php" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                      </a>
-                    </li>
-                  </ul>
-            </footer>
+              <ul class="pagination" <?php if ($totalUsuarios <= $usuariosPorPagina) echo 'style="display: none;"'; ?>>
+                  <?php
+                  // Loop para generar los enlaces de las páginas
+                  for ($i = 1; $i <= $totalPaginas; $i++) {
+                      echo '<li class="page-item"><a class="page-link" href="?pagina=' . $i . '">' . $i . '</a></li>';
+                  }
+                  ?>
+              </ul>
+             </footer>
         </div>
-    </div>
-    
-   
-    
+
 </body>
 <script>
                 (() => {
@@ -163,7 +152,21 @@
                         }, false)
                     })
                 })()
+
+                function buscarUsuario() {
+                  var textoBusqueda = $('#inputBusqueda').val().toLowerCase();
+        
+        $('#tabla_usuarios tbody tr').each(function () {
+            var textoFila = $(this).text().toLowerCase();
+            if (textoFila.indexOf(textoBusqueda) === -1) {
+                $(this).hide();
+            } else {
+                $(this).show();
+            }
+        });
+}
             </script>
 <script src="../js/borrar_usu.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>
