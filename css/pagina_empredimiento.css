@@ -1,7 +1,11 @@
 *{
     font-family: Helvetica;
+    
 }
-
+.fondo
+{
+    background-color: #C5D2EC;
+}
 .informacion_general {
     display: flex;
     flex-direction: column;
@@ -18,4 +22,59 @@
     width: 50px;
     height: auto;
     margin-right: 10px;
+}
+.numero_empre
+{
+    text-decoration: none;
+    color: black;
+}
+#img_size
+{
+    width: 300px;
+    height: 250px;
+    border-radius: 15px;
+}
+.video-section
+{
+    margin: 20px 20px 20px 20px;
+    align-items: center;  
+    text-align: center;
+}
+
+.mensaje_video
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    width: auto;
+    height: 80px;
+    background-color: #324fc1;
+    margin-left: 20px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    color: white;
+    text-align: center;
+    padding: 30px 30px;
+    color: white;
+}
+@media (max-width: 768px) {
+    #img_size {
+        width: 100px;
+        height: 100px; 
+    }
+}
+@media (max-width: 768px) {
+    .container {
+        font-size: 14px; /* Cambia el tamaño de fuente para pantallas pequeñas */
+        height: auto; /* Restaura la altura automática para que se ajuste al contenido */
+        padding: 10px;  /* Cambia el tamaño de fuente para pantallas pequeñas */
+    }
+}
+@media (max-width: 768px) {
+    .mensaje_video {
+        font-size: 14px; /* Cambia el tamaño de fuente para pantallas pequeñas */
+        height: auto; /* Restaura la altura automática para que se ajuste al contenido */
+        padding: 10px; /* Ajusta el espacio interno */
+    }
 }
