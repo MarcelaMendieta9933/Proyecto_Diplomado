@@ -29,3 +29,10 @@ label
     margin-bottom: 50px;
 }
 
+@media (max-width: 768px) {
+    .bienvenida_adminstrador {
+        font-size: 14px; /* Cambia el tamaño de fuente para pantallas pequeñas */
+        height: auto; /* Restaura la altura automática para que se ajuste al contenido */
+        padding: 10px; /* Ajusta el espacio interno */
+    }
+}

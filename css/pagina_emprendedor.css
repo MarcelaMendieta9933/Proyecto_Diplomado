@@ -151,6 +151,19 @@
     background-size: 400px 200px;
     font-size: 18px;
     cursor: pointer;
+    text-align: center;
+    color: white
 }
 
+#boton{
+        background-image: url(../imagenes/usuario.png);
+     background-color: #e1e2e4; 
+        display: block;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background-size: 66px;
+        border-color: #e1e2e4;
+      
+}
 
