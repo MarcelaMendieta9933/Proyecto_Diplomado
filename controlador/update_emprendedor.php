@@ -1,3 +1,12 @@
+
+<head>
+<script src="dist/sweetalert.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link rel="icon" type="image/x-icon" href="../imagenes/logo.png"/>
+</head>
+
+</html>
+
 <?php
 include 'conexion_db.php'; 
 
@@ -29,10 +38,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "UPDATE emprendedores SET nombre_completo='$nombre_completo', ciudad='$ciudad', cedula='$cedula', telefono='$telefono', direccion='$direccion' WHERE fk_id_usu = $id;";
 
         if ($conn->query($sql) === TRUE) {
-            echo '<script>alert("Usuario actualizado exitosamente."); window.location.href="../vistas/pagina_emprendedor.php";</script>';
+            echo "<script> Swal.fire(
+                'Usuario creado',
+                'Exitosamenete!!!',
+                'success'
+              );    
+              setTimeout(function() {
+                window.location='../vistas/pagina_emprendedor.php';
+              }, 1500);
+              </script>";
         } else {
             echo "Error al actualizar datos: " . $conn->error;
         }
+        
     }
 }
 

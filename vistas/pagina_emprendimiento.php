@@ -33,24 +33,29 @@ $conn->close();
     <title>Timely | Emprendimiento</title> <!-- cambiar si se puede para traer el nombre del emprendiento -->
 </head>
 <body>
-
+<div class="fondo">
 <?php include "nav.html"; ?>
 
     <div class="container">
         <div class="row justify-content-around">
-            <div class="col-6 informacion_general">
-                <img src="../imagenes/<?php echo $emprendimiento['logo']?>" class="card-img-top" alt="logo empredimiento">
+            <div class="col-4 col-md-4 informacion_general">
+                <img src="../imagenes/empredimientos/<?php echo $emprendimiento['logo']?>" class="card-img-top" id="img_size" alt="logo empredimiento">
             </div>
-            <div class="col-6 informacion_general">
+            <div class="col-8 col-md-8 informacion_general" id="info_general">
                 <h1 class="titulo_empredimiento"><?php echo $emprendimiento['title_emprendimiento'] ?></h1>
                 <p class="descripcion_empredimiento"><?php echo $emprendimiento['descripcion'] ?></p>
                 <div class="contacto_empredimiento" onclick="redireccionar()">
-                    <img src="../imagenes/logoTimely.png" alt="logo_whats">
-            </div>
-                    <a href="https://api.whatsapp.com/send?phone=<?php echo $emprendimiento['whatsapp']?>"><?php echo $emprendimiento['whatsapp']?></a>
+                    
+                    <a class="numero_empre" href="https://api.whatsapp.com/send?phone=<?php echo $emprendimiento['whatsapp']?>">
+                        <img src="../imagenes/wso-removebg-preview.png" alt="logo_whats"><?php echo $emprendimiento['whatsapp']?>
+                    </a>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="mensaje_video">
+        Conozca mas del empredimiento en el siguiente video: 
     </div>
 
     <div class="video-section">
@@ -58,8 +63,8 @@ $conn->close();
         <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $emprendimiento['video'];?>?si=NPusF_BoiBJPF2MN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
 
-    <?php include "footer.html"; ?>
-
+<?php include "footer.html"; ?>
+</div>
 </body>
 <script>function redireccionar() {
     window.location.href ='https://api.whatsapp.com/send?phone=<?php echo $emprendimiento['whatsapp']?>';

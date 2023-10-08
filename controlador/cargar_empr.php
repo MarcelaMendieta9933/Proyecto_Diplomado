@@ -14,10 +14,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nombre = $conn->real_escape_string($_POST["nombre"]);
     $descripcion = $conn->real_escape_string($_POST["descripcion"]);
     $whatsapp = $conn->real_escape_string($_POST["whatsapp"]);
+    $categoria = $conn->real_escape_string($_POST["categoria"]);
 
     // Genera un nombre único para la imagen
 $imagenNombre = uniqid() . "_" . basename($_FILES["logo"]["tmp_name"]);
-$imagenRuta = "../imagenes/" . $imagenNombre;
+$imagenRuta = "../imagenes/empredimientos/" . $imagenNombre;
 
 // Mueve la imagen a la carpeta de imágenes con el nombre único
 if (move_uploaded_file($_FILES["logo"]["tmp_name"], $imagenRuta)) {
@@ -33,7 +34,7 @@ if (move_uploaded_file($_FILES["logo"]["tmp_name"], $imagenRuta)) {
     $lastPart = end($parts);
     
     // Inserta los datos en la base de datos, incluyendo el nombre del archivo del logo
-    $sql = "INSERT INTO modelo (fk_id_empre,title_emprendimiento, descripcion, video, whatsapp, logo ) VALUES ('$idusuario','$nombre', '$descripcion', '$lastPart', '$whatsapp', '$logoNombre')";
+    $sql = "INSERT INTO modelo (fk_id_empre,title_emprendimiento, descripcion, video, whatsapp, logo, categorias ) VALUES ('$idusuario','$nombre', '$descripcion', '$lastPart', '$whatsapp', '$logoNombre', '$categoria')";
 
     if ($conn->query($sql) === TRUE) {
         echo '<script>alert("Emprendimiento Creado Exitosamente."); window.location.href="../vistas/pagina_emprendedor.php";</script>';

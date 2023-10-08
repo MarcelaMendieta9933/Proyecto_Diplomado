@@ -142,3 +142,15 @@ body{
     padding: 5px 10px;
     font-size: 14px;
 }
+
+#img_size
+{
+    width: 300px;
+    height: 250px;
+}
+/* Tamaño de letra para pantallas más pequeñas */
+@media (max-width: 576px) {
+    #card-body_id {
+        width: 250px;
+        }  
+    }

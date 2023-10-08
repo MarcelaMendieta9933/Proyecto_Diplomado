@@ -33,10 +33,11 @@
                 ?>  
                  a Timely</div>
                  <!-- Button trigger modal -->
-                        <div>
+                        
                         <button type="button" class="btn btn-outline-light" id="boton" data-bs-toggle="modal" data-bs-target="#exampleModal">
+
                         </button>
-                        </div>
+                        
                         
                         <!-- Modal -->
                         <?php 
@@ -44,7 +45,7 @@
                             $resultado = mysqli_fetch_array($query);
 
 
-                        ?>
+                        ?> 
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -53,27 +54,27 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                            <form method="post" action="../controlador/update_emprendedor.php" onsubmit="" class="row g-3 needs-validation" novalidate>
+                            <form method="post" action="../controlador/update_emprendedor.php" onsubmit="" class="row g-3 needs-validation" >
                                     
                                     <div class="form-group">
                                         <label for="nombre">Nombre Completo:</label>
-                                        <input class="form-control" id="nombre_completo" type="text" value="<?php echo $resultado['nombre_completo'];?>" name="nombre_completo" required>
+                                        <input class="form-control" id="nombre_completo" type="text" value="<?php echo $resultado['nombre_completo'];?>" name="nombre_completo" >
                                     </div>
                                     <div class="form-group">
                                         <label for="nombre">Cuidad :</label>
-                                        <input class="form-control" id="cuidad" type="text" value="<?php echo $resultado['ciudad'];?>" name="ciudad" required>
+                                        <input class="form-control" id="cuidad" type="text" value="<?php echo $resultado['ciudad'];?>" name="ciudad" >
                                     </div>
                                     <div class="form-group">
                                         <label for="nombre">Cedula :</label>
-                                        <input class="form-control" id="cedula" type="text" value="<?php echo $resultado['cedula'];?>" name="cedula" required>
+                                        <input class="form-control" id="cedula" type="text" value="<?php echo $resultado['cedula'];?>" name="cedula" >
                                     </div>
                                     <div class="form-group">
                                         <label for="nombre">Teléfono :</label>
-                                        <input class="form-control" id="telefono" type="text" value="<?php echo $resultado['telefono'];?>" name="telefono" required>
+                                        <input class="form-control" id="telefono" type="text" value="<?php echo $resultado['telefono'];?>" name="telefono" >
                                     </div>
                                     <div class="form-group">
                                         <label for="nombre">Dirección :</label>
-                                        <input class="form-control" id="direccion" type="text" value="<?php echo $resultado['direccion'];?>" name="direccion" required>
+                                        <input class="form-control" id="direccion" type="text" value="<?php echo $resultado['direccion'];?>" name="direccion" >
                                     </div>
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-primary" name="insertar">Actualizar</button>
@@ -105,7 +106,7 @@
                 if(isset($_POST['btncerrar']))
                 {
                     session_destroy();
-                    header('location: ../vistas/mi_emprendedor.html');
+                    header('location: vistas/mi_emprendedor.html');
                 }
                 ?> 
                 
