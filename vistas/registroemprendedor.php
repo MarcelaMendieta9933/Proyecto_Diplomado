@@ -41,6 +41,7 @@
                 <div class="modal-body">
                     <form method="post" action="../controlador/registroemprendedor.php" onsubmit="" class="row g-3 needs-validation" novalidate>
                         <div class="form-group">
+                        <input type="hidden" name="accion" value="insertar">
                             <label for="nombre">Nombre Completo:</label>
                             <input class="form-control" id="nombre_completo" type="text" value="" name="nombre_completo" required>
                         </div>
