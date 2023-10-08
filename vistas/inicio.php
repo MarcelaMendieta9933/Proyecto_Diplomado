@@ -47,13 +47,6 @@
     <!-- Cuadros de galería -->
    
     <div class="gallery" id="emprendimientos">
-         <!-- Cuadro 1 -->
-        <div class="card gallery-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-tags="Autos deportivos, autos de lujo, automóviles rápidos">
-            <img src="../imagenes/autos1.jpg" class="card-img-top" alt="Autos">
-            <div class="card-body">
-                <p class="card-text">Un texto de ejemplo rápido para colocar cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
-            </div>
-        </div>
         <script src="../js/galeria_inicio.js"></script>
     </div>
 
