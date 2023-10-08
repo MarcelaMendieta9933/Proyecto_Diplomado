@@ -45,70 +45,16 @@
     </div>
 
     <!-- Cuadros de galería -->
-    <div class="gallery">
-        <!-- Cuadro 1 -->
+   
+    <div class="gallery" id="emprendimientos">
+         <!-- Cuadro 1 -->
         <div class="card gallery-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-tags="Autos deportivos, autos de lujo, automóviles rápidos">
             <img src="../imagenes/autos1.jpg" class="card-img-top" alt="Autos">
             <div class="card-body">
-                <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
+                <p class="card-text">Un texto de ejemplo rápido para colocar cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
             </div>
         </div>
-        <!-- Cuadro 2 -->
-        <div class="card gallery-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-tags="Comida">
-            <img src="../imagenes/comida1.jpg" class="card-img-top" alt="Comida">
-            <div class="card-body">
-                <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
-            </div>
-        </div>
-        <!-- Cuadro 3 -->
-        <div class="card gallery-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-tags="Barberia">
-            <img src="../imagenes/barberia1.jpg" class="card-img-top" alt="Barberia">
-            <div class="card-body">
-                <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
-            </div>
-        </div>
-        <!-- Cuadro 4 -->
-        <div class="card gallery-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-tags="Autos">
-            <img src="../imagenes/autos2.jpg" class="card-img-top" alt="Autos">
-            <div class="card-body">
-                <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
-            </div>
-        </div>
-        <!-- Cuadro 5 -->
-        <div class="card gallery-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-tags="Comida">
-            <img src="../imagenes/comida2.jpg" class="card-img-top" alt="Comida">
-            <div class="card-body">
-                <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
-            </div>
-        </div>
-        <!-- Cuadro 6 -->
-        <div class="card gallery-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-tags="Barberia">
-            <img src="../imagenes/barberia2.jpg" class="card-img-top" alt="Barberia">
-            <div class="card-body">
-                <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
-            </div>
-        </div>
-        <!-- Cuadro 7 -->
-        <div class="card gallery-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-tags="Autos">
-            <img src="../imagenes/autos3.jpg" class="card-img-top" alt="Autos">
-            <div class="card-body">
-                <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
-            </div>
-        </div>
-        <!-- Cuadro 8 -->
-        <div class="card gallery-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-tags="Comida">
-            <img src="../imagenes/comida3.jpg" class="card-img-top" alt="Comida">
-            <div class="card-body">
-                <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
-            </div>
-        </div>
-        <!-- Cuadro 9 -->
-        <div class="card gallery-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-tags="Barberia">
-            <img src="../imagenes/barberia3.jpg" class="card-img-top" alt="Barberia">
-            <div class="card-body">
-                <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
-            </div>
-        </div>
+        <script src="../js/galeria_inicio.js"></script>
     </div>
 
     <?php include "footer.html"; ?>
