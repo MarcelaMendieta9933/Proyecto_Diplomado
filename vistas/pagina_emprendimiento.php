@@ -1,3 +1,26 @@
+<?php
+// detalle_emprendimiento.php
+require_once '../controlador/conexion_db.php'; // Aquí debes tener tus credenciales de conexión a la base de datos
+
+if ($conn->connect_error) {
+    die("Error de conexión: " . $conn->connect_error);
+}
+
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+
+    $query = "SELECT * FROM modelo WHERE id = $id";
+    $result = $conn->query($query);
+
+    if ($result->num_rows > 0) {
+        $emprendimiento = $result->fetch_assoc();
+    }
+}
+
+$conn->close();
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -16,26 +39,30 @@
     <div class="container">
         <div class="row justify-content-around">
             <div class="col-6 informacion_general">
-                <img src="../imagenes/empredimientos/logoTimely.png" class="card-img-top" alt="logo empredimiento">
+                <img src="../imagenes/<?php echo $emprendimiento['logo']?>" class="card-img-top" alt="logo empredimiento">
             </div>
             <div class="col-6 informacion_general">
-                <h1 class="titulo_empredimiento">titulo empredimiento</h1>
-                <p class="descripcion_empredimiento">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga non excepturi laudantium ipsum ab. Earum ipsam nobis esse odio ut aspernatur. Fuga assumenda odio in aliquam dignissimos illo enim officiis!</p>
-                <div class="contacto_empredimiento">
-                    <img src="../imagenes/wso-removebg-preview.png" alt="logo_whats">
-                    <h5>numero celular</h5>
+                <h1 class="titulo_empredimiento"><?php echo $emprendimiento['title_emprendimiento'] ?></h1>
+                <p class="descripcion_empredimiento"><?php echo $emprendimiento['descripcion'] ?></p>
+                <div class="contacto_empredimiento" onclick="redireccionar()">
+                    <img src="../imagenes/logoTimely.png" alt="logo_whats">
+            </div>
+                    <a href="https://api.whatsapp.com/send?phone=<?php echo $emprendimiento['whatsapp']?>"><?php echo $emprendimiento['whatsapp']?></a>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="video-section">
-        <!-- Aquí puedes insertar tu video -->
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+        <!-- Aquí puedes insertar tu video -->    
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $emprendimiento['video'];?>?si=NPusF_BoiBJPF2MN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
 
     <?php include "footer.html"; ?>
 
 </body>
+<script>function redireccionar() {
+    window.location.href ='https://api.whatsapp.com/send?phone=<?php echo $emprendimiento['whatsapp']?>';
+  }</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>   
 </html>

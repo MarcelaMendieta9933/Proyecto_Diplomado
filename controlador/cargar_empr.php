@@ -28,9 +28,12 @@ if (move_uploaded_file($_FILES["logo"]["tmp_name"], $imagenRuta)) {
     $imageURLs = $_POST["image"];
     // Concatena las URLs de las imágenes con comas
     $imageURLsConcatenated = implode(", ", $imageURLs);
-
+    // Extraer el id de la url de youtube
+    $parts = explode('/', parse_url($imageURLsConcatenated, PHP_URL_PATH));
+    $lastPart = end($parts);
+    
     // Inserta los datos en la base de datos, incluyendo el nombre del archivo del logo
-    $sql = "INSERT INTO modelo (fk_id_empre,title_emprendimiento, descripcion, video, whatsapp, logo ) VALUES ('$idusuario','$nombre', '$descripcion', '$imageURLsConcatenated', '$whatsapp', '$logoNombre')";
+    $sql = "INSERT INTO modelo (fk_id_empre,title_emprendimiento, descripcion, video, whatsapp, logo ) VALUES ('$idusuario','$nombre', '$descripcion', '$lastPart', '$whatsapp', '$logoNombre')";
 
     if ($conn->query($sql) === TRUE) {
         echo '<script>alert("Emprendimiento Creado Exitosamente."); window.location.href="../vistas/pagina_emprendedor.php";</script>';
