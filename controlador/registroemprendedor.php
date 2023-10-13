@@ -32,9 +32,10 @@ if(isset($_SESSION['idusuario']))
     
     if ($conn->query($sq) === TRUE) {
         echo "<script> Swal.fire(
-          'Usuario creado',
-          'Exitosamenete!!!',
-          'success'
+          {icon: 'success',
+          title: 'Datos creado',
+          text: 'Exitosamente!!!',
+          showConfirmButton: false}
         );    
         setTimeout(function() {
           window.location='../vistas/pagina_emprendedor.php';

@@ -57,7 +57,7 @@
                         </div>
                         <br>
                         <button type="button" id="cancelButton" class="btn btn-secondary">Cancelar</button>
-                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <button type="submit" class="btn btn-primary">Agregar</button>
                     </form>
                 </div>
             </div>
