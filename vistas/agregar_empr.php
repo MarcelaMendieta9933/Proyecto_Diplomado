@@ -52,7 +52,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="whatsapp">Describa minimo menos de tres palabras el empredimento:</label>
+                            <label for="whatsapp">Describa minimo en tres palabras claves el empredimento:</label>
                             <input class="form-control"  type="text" name="categoria" value="" required autocomplete="off">
                         </div>
                         <br>
