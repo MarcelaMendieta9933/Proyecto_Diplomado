@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+
+<head>
+<script src="dist/sweetalert.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link rel="icon" type="image/x-icon" href="../imagenes/logo.png"/>
+</head>
+
+</html>
 <?php
 include 'conexion_db.php';
 
@@ -32,9 +41,27 @@ if (isset($_POST['usuarioID']) && isset($_POST['usuario']) && isset($_POST['nive
 
         if ($resultado) {
             // Mostrar una alerta de éxito y redirigir al usuario a pagina_administrador.php
-            echo '<script>alert("Usuario actualizado exitosamente."); window.location.href="../vistas/pagina_administrador.php";</script>';
+            echo "<script> Swal.fire(
+                'Usuario Actualizado',
+                'Exitosamenete!!!',
+                'success'
+              );    
+              setTimeout(function() {
+                window.location='../vistas/pagina_administrador.php';
+              }, 1500);
+              </script>";
+            
         } else {
-            echo "Error al actualizar el usuario: " . mysqli_error($conn);
+            echo "<script> Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Este usuario $nombre ya existe '
+              });    
+              setTimeout(function() {
+                window.location='../vistas/pagina_emprendedor.php';
+              }, 1800);
+              </script>"
+            . mysqli_error($conn);
         }
     }
 } else {
