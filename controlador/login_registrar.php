@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+
+<head>
+<script src="dist/sweetalert.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link rel="icon" type="image/x-icon" href="../imagenes/logo.png"/>
+</head>
+
+</html>
 <?php
 
 include('conexion_db.php');
@@ -52,8 +61,15 @@ if(isset($_POST["accion"]))
             
             if(mysqli_query($conn,$queryregistrar))
             {
-                echo "<script> alert('Usuario registrado: $nombre');window.location= '../vistas/mi_emprendedor.html' </script>";
-            }
+                echo "<script> Swal.fire(
+                    'Usuario creado $nombre',
+                    'Exitosamenete!!!',
+                    'success'
+                  );    
+                  setTimeout(function() {
+                    window.location='../vistas/pagina_emprendedor.php';
+                  }, 1500);
+                  </script>";            }
             else 
             {
                 echo "Error: " .$queryregistrar."<br>".mysql_error($conn);
@@ -61,8 +77,15 @@ if(isset($_POST["accion"]))
         }
         else
         {
-            echo "<script> alert('No puedes registrar a este usuario: $nombre');window.location= '../vistas/mi_emprendedor.html' </script>";
-        }
+            echo "<script> Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Este usuario $nombre ya existe '
+              });    
+              setTimeout(function() {
+                window.location='../vistas/pagina_emprendedor.php';
+              }, 2800);
+              </script>";         }
     } 
 }
 ?>
