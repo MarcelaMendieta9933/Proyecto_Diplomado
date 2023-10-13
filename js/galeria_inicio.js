@@ -29,8 +29,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             galleryItems.forEach(function (item) {
                 const altText = item.querySelector("img").getAttribute("alt").toLowerCase();
+                const cardBody = item.querySelector("#card-body");
 
                 if (altText.includes(searchTerm)) {
+                    cardBody.textContent.toLowerCase().includes(searchTerm)
                     item.style.display = "block";
                 } else {
                     item.style.display = "none";
