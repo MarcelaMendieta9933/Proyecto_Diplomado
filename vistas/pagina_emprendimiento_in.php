@@ -39,7 +39,7 @@ $conn->close();
     <!-- Button trigger modal -->
     <div>
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Agregar Usuarios
+            Editar Emprendimiento
         </button>
     </div>
     
@@ -87,7 +87,8 @@ $conn->close();
             
             </div>
     </div>
-     
+    <button id="borrarBtn" data-id="<?php echo $emprendimiento['id']; ?>">Borrar</button>
+    <button id="volverBtn">Volver</button> 
     <div class="container">
         <div class="row justify-content-around">
             <div class="col-6 informacion_general">
@@ -121,6 +122,30 @@ $conn->close();
     <?php include "footer.html"; ?>
 
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $("#borrarBtn").click(function() {
+        var id = $(this).data("id");
+        
+        if (confirm("¿Estás seguro de que deseas eliminar este elemento?")) {
+            $.post("eliminar.php", { id: id }, function(data) {
+                // Manejar la respuesta, por ejemplo, recargar la página o actualizar la lista de elementos.
+            });
+        }
+    });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    $("#volverBtn").click(function() {
+        window.history.back();
+    });
+});
+</script>
+
 <script>function redireccionar() {
     window.location.href ='https://api.whatsapp.com/send?phone=<?php echo $emprendimiento['whatsapp']?>';
   }</script>
