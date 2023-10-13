@@ -56,24 +56,20 @@ $conn->close();
                         <form action="../controlador/newusuario.php" onsubmit="" method="post"  class="row g-3 needs-validation" novalidate>
                             <div class="form-group emprendimiento-info">
                                 <label for="nombre">Nombre del Emprendimiento:</label>
-                                <input class="form-control"  type="text" name="nombre" required autocomplete="off">
+                                <input class="form-control"  type="text" name="nombre" value="<?php echo $emprendimiento['title_emprendimiento'] ?>" required autocomplete="off">
                             </div>
                             <div class="form-group">
                                 <label for="descripcion">Descripción:</label>
-                                <textarea class="form-control"  name="descripcion" required></textarea>
+                                <textarea class="form-control"  name="descripcion" required><?php echo $emprendimiento['descripcion'] ?></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="whatsapp">Número de WhatsApp:</label>
-                                <input class="form-control"  type="text" name="whatsapp" required autocomplete="off">
-                            </div>
-                            <div class="form-group">
-                                <label for="logo">Logo del Emprendimiento:</label>
-                                <input class="form-control" type="file" name="logo" accept="image/*" required>
+                                <input class="form-control"  type="text" name="whatsapp" value="<?php echo $emprendimiento['whatsapp']?>" required autocomplete="off">
                             </div>
                             <div id="productFields">
                                 <div class="form-group product">
                                     <label for="image">Enlace del Video:</label>
-                                    <input class="form-control" type="text" name="image[]" required autocomplete="off">
+                                    <input class="form-control" type="text" name="image[]" value="<?php echo $emprendimiento['video'];?>" required autocomplete="off">
                                 </div>
                             </div>
                             <br>
@@ -95,7 +91,7 @@ $conn->close();
     <div class="container">
         <div class="row justify-content-around">
             <div class="col-6 informacion_general">
-                <img src="../imagenes/<?php echo $emprendimiento['logo']?>" class="card-img-top" alt="logo empredimiento">
+                <img src="../imagenes/empredimientos/<?php echo $emprendimiento['logo']?>" class="card-img-top" alt="logo empredimiento">
             </div>
             <div class="col-6 informacion_general">
                 <h1 class="titulo_empredimiento"><?php echo $emprendimiento['title_emprendimiento'] ?></h1>
