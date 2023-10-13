@@ -31,6 +31,26 @@
                   header('location: ../vistas/mi_emprendedor.html');
                 }
                 ?>  
+                <?php 
+                if(isset($_SESSION['idusuario'])){
+                    $id = $_SESSION['idusuario'];
+                    
+                    $queryVerify = mysqli_query($conn,"SELECT * FROM `emprendedores` WHERE fk_id_usu = $id;");
+                    $nr= mysqli_num_rows($queryVerify);
+                    if ($nr == 0) {
+                        // El resultado de la consulta es vacío, redirigir al usuario a registroemprendedor.php
+                        header('location: ../vistas/registroemprendedor.php');
+                        exit(); // Es importante salir del script después de enviar el encabezado de redirección
+                    }
+                }
+                ?>
+                <?php 
+                if(isset($_POST['btncerrar']))
+                {
+                    session_destroy();
+                    header('location: mi_emprendedor.html');
+                }
+                ?> 
                  a Timely</div>
                  <!-- Button trigger modal -->
                         
@@ -85,31 +105,10 @@
                             </div>
                         </div>
                         </div>
-                <?php 
-                if(isset($_SESSION['idusuario'])){
-                    $id = $_SESSION['idusuario'];
-                    
-                    $queryVerify = mysqli_query($conn,"SELECT * FROM `emprendedores` WHERE fk_id_usu = $id;");
-                    $nr= mysqli_num_rows($queryVerify);
-                    if ($nr == 0) {
-                        // El resultado de la consulta es vacío, redirigir al usuario a registroemprendedor.php
-                        header('location: ../vistas/registroemprendedor.php');
-                        exit(); // Es importante salir del script después de enviar el encabezado de redirección
-                    }
-                }
-                ?>
             </nav>
             <form method="POST">
                 <input type="submit" class="close-button" value="Cerrar sesión" name="btncerrar" />
                 </form>
-                <?php 
-                if(isset($_POST['btncerrar']))
-                {
-                    session_destroy();
-                    header('location: vistas/mi_emprendedor.html');
-                }
-                ?> 
-                
             <div id="carouselControls" class="carousel slide slider-frame d-block w-100" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -134,6 +133,11 @@
                     <span class="visually-hidden">Siguiente</span>
                 </button>
             </div>
+
+            <div class="mensaje_empredimientos">
+                Mis emprendimientos: 
+            </div>
+
             <div class="gallery" id="emprendimientos">
                 <script src="../js/galeria_in.js"></script>
             </div>
