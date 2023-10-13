@@ -21,9 +21,9 @@
 		<!--Formulario para el login -->
         <form id="frmlogin" class="grupo-entradas" method="POST" action="../controlador/login_registrar.php">
         <input type="hidden" name="accion" value="login">
-        <input type="text" class="cajaentradatexto" placeholder="&#128273 Ingresar usuario" name="txtusuario" required>
-        <input type="password" class="cajaentradatexto" placeholder="&#128274 Ingresar contraseña" name="txtpassword" required>
-        <input type="checkbox" class="checkboxvai"><span>Recordar contraseña</span>
+        <input type="text" class="cajaentradatexto" placeholder="&#128273 Ingresar usuario" name="txtusuario" required autocomplete="off">
+        <input type="password" class="cajaentradatexto" placeholder="&#128274 Ingresar contraseña" name="txtpassword" required autocomplete="off">
+       
         <button type="submit" class="botonenviar" name="btnloginx">Iniciar sesión</button>
         </form>
         <!--Formulario para registrar --> 
@@ -31,9 +31,9 @@
         <input type="hidden" name="accion" value="registrar">
         <input type="text" class="cajaentradatexto" placeholder="&#128273 Ingresar usuario" required 
         name="txtusuario">
-        <input type="password" class="cajaentradatexto" placeholder="&#128274 Ingresar contraseña" required name="txtpassword">
-        <input type="email" class="cajaentradatexto" placeholder="📧 Ingresar correo electrónico" required name="txtemail">
-        <input type="checkbox" class="checkboxvai"><span>He leído y acepto los términos y condiciones de uso.</span>
+        <input type="password" class="cajaentradatexto" placeholder="&#128274 Ingresar contraseña" required name="txtpassword" required autocomplete="off">
+        <input type="email" class="cajaentradatexto" placeholder="📧 Ingresar correo electrónico" required name="txtemail" required autocomplete="off">
+        
         <button type="submit" class="botonenviar" name="btnregistrarx">Registrar</button>
         </form>
     
