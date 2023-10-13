@@ -61,7 +61,9 @@ $conn->close();
     <div class="video-section">
         <!-- Aquí puedes insertar tu video -->    
         <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $emprendimiento['video'];?>?si=NPusF_BoiBJPF2MN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <p>Creditos de youtube.</p>
     </div>
+    
 
 <?php include "footer.html"; ?>
 </div>
