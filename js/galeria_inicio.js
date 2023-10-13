@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             emprendimientoDiv.classList.add('card', 'gallery-item', 'col-xs-12', 'col-sm-6', 'col-md-4', 'col-lg-3');
             emprendimientoDiv.setAttribute('data-tags', emprendimiento.categorias); // Si tienes categorías, puedes asignarlas aquí
             emprendimientoDiv.innerHTML = `
-                <img src="../imagenes/empredimientos/${emprendimiento.logo}" class="card-img-top" id="img_size" alt="${emprendimiento.categorias}">
+                <img src="../imagenes/empredimientos/${emprendimiento.logo}" class="card-img-top w-100 h-100" alt="${emprendimiento.categorias}">
                 <div class="card-body" id="card-body_id">
                     <h2 class="card-title">${emprendimiento.title_emprendimiento}</h2>
                     <p class="card-text">${emprendimiento.descripcion.substring(0, 100)}...</p>

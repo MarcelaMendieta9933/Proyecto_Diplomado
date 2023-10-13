@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -20,7 +20,7 @@
         $usuarioingresado = $_SESSION['nombredelusuario'];
         $idusuario = $_SESSION['idusuario'];
     } else {
-        header('location: ../vistas/mi_emprendedor.html');
+        header('location: mi_emprendedor.html');
     }
     ?>
 
@@ -29,7 +29,7 @@
     <?php
     if (isset($_POST['btncerrar'])) {
         session_destroy();
-        header('location: ../vistas/mi_emprendedor.html');
+        header('location: mi_emprendedor.html');
     }
     ?>
     <div class="modal position-static d-block" tabindex="0">
@@ -43,23 +43,23 @@
                         <div class="form-group">
                         <input type="hidden" name="accion" value="insertar">
                             <label for="nombre">Nombre Completo:</label>
-                            <input class="form-control" id="nombre_completo" type="text" value="" name="nombre_completo" required>
+                            <input class="form-control" id="nombre_completo" type="text" value="" name="nombre_completo" required autocomplete="off">
                         </div>
                         <div class="form-group">
                             <label for="nombre">Cuidad :</label>
-                            <input class="form-control" id="cuidad" type="text" value="" name="ciudad" required>
+                            <input class="form-control" id="cuidad" type="text" value="" name="ciudad" required autocomplete="off">
                         </div>
                         <div class="form-group">
                             <label for="nombre">Cedula :</label>
-                            <input class="form-control" id="cedula" type="text" value="" name="cedula" required>
+                            <input class="form-control" id="cedula" type="text" value="" name="cedula" required autocomplete="off">
                         </div>
                         <div class="form-group">
                             <label for="nombre">Teléfono :</label>
-                            <input class="form-control" id="telefono" type="text" value="" name="telefono" required>
+                            <input class="form-control" id="telefono" type="text" value="" name="telefono" required autocomplete="off">
                         </div>
                         <div class="form-group">
                             <label for="nombre">Dirección :</label>
-                            <input class="form-control" id="direccion" type="text" value="" name="direccion" required>
+                            <input class="form-control" id="direccion" type="text" value="" name="direccion" required autocomplete="off">
                         </div>
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-primary" name="insertar">Enviar</button>
