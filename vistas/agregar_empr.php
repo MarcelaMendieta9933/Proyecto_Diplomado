@@ -51,6 +51,10 @@
                                 <input class="form-control" type="text" name="image[]" required autocomplete="off">
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label for="whatsapp">Describa minimo menos de tres palabras el empredimento:</label>
+                            <input class="form-control"  type="text" name="categoria" value="" required autocomplete="off">
+                        </div>
                         <br>
                         <button type="button" id="cancelButton" class="btn btn-secondary">Cancelar</button>
                         <button type="submit" class="btn btn-primary">Enviar</button>

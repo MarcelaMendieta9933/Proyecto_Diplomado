@@ -1,0 +1,23 @@
+// script.js
+window.addEventListener('DOMContentLoaded', (event) => {
+    fetch('../controlador/cargar_emprendimientos_in.php')
+    .then(response => response.json())
+    .then(data => {
+        const emprendimientosDiv = document.getElementById('emprendimientos');
+        data.forEach(emprendimiento => {
+            const emprendimientoDiv = document.createElement('div');
+            emprendimientoDiv.classList.add('card', 'gallery-item', 'col-xs-12', 'col-sm-6', 'col-md-4', 'col-lg-3');
+            emprendimientoDiv.setAttribute('data-tags', emprendimiento.categorias); // Si tienes categorías, puedes asignarlas aquí
+            emprendimientoDiv.innerHTML = `
+                <img src="../imagenes/${emprendimiento.logo}" class="card-img-top" alt="${emprendimiento.title_emprendimiento}">
+                <div class="card-body">
+                    <h2 class="card-title">${emprendimiento.title_emprendimiento}</h2>
+                    <p class="card-text">${emprendimiento.descripcion.substring(0, 100)}...</p>
+                    <a href="../vistas/pagina_emprendimiento_in.php?id=${emprendimiento.id}" class="card-link">Ver más</a>
+                </div>
+            `;
+            emprendimientosDiv.appendChild(emprendimientoDiv);
+        });
+    });
+ });
+ 
