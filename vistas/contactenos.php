@@ -23,11 +23,11 @@
                     <form method="post" action="../controlador/newcontact.php" onsubmit="" class="row g-3 needs-validation" novalidate>
                         <div class="form-group">
                             <label for="nombre">Nombre Completo:</label>
-                            <input class="form-control" id="nombreCompleto" type="text" value="" name="nombre" required>
+                            <input class="form-control" id="nombreCompleto" type="text" value="" name="nombre" required autocomplete="off">
                         </div>
                         <div class="form-group">
                             <label for="correo">Correo electronico:</label>
-                            <input class="form-control" id="correoElectronico" type="email" maxlength="64" name="correo" placeholder="ejemplo@gmail.com" required>
+                            <input class="form-control" id="correoElectronico" type="email" maxlength="64" name="correo" placeholder="ejemplo@gmail.com" required autocomplete="off">
                         </div>
                         <label for="inquietudes">Describenos tu inquietud:</label>
                         <textarea class="form-control" id="descripcion" rows="3" name="descripcion" required></textarea>
