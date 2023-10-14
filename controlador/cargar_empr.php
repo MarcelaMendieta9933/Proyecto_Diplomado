@@ -50,7 +50,7 @@ if (move_uploaded_file($_FILES["logo"]["tmp_name"], $imagenRuta)) {
         echo "<script> Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: 'No se pude crear emprendimiento '
+            text: 'No se puede crear emprendimiento '
           });    
           setTimeout(function() {
             window.location='../vistas/pagina_emprendedor.php';
