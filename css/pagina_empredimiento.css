@@ -2,6 +2,9 @@
     font-family: Helvetica;
     
 }
+body {
+    background-color: #C5D2EC;
+}
 .fondo
 {
     background-color: #C5D2EC;
@@ -77,4 +80,24 @@
         height: auto; /* Restaura la altura automática para que se ajuste al contenido */
         padding: 10px; /* Ajusta el espacio interno */
     }
+}
+
+.botones_accion {
+    background-color: #C5D2EC;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#volverBtn {
+    margin-left: 50px;
+    margin-right: auto;/* Coloca este botón a la izquierda */
+}
+
+#button-right {
+    align-items: right;
+    order: 2;
+    margin-right: 50px; /* Coloca estos dos botones a la derecha */
 }

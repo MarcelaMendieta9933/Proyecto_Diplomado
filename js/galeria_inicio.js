@@ -25,16 +25,26 @@ document.addEventListener("DOMContentLoaded", async function () {
         const galleryItems = document.querySelectorAll(".gallery-item");
 
         searchInput.addEventListener("input", function () {
-            const searchTerm = searchInput.value.toLowerCase();
+  
+                const searchTerm = searchInput.value.toLowerCase();
 
+                galleryItems.forEach(function (item) {
+                    const altText = item.querySelector("img").getAttribute("alt").toLowerCase();
+                    const cardBody = item.querySelector("#card-body");
+    
+                    if (altText.includes(searchTerm)) {
+                        cardBody.textContent.toLowerCase().includes(searchTerm)
+                        item.style.display = "block";
+                    } else {
+                        item.style.display = "none";
+                    }
+                });
+        });
+
+        searchInput.addEventListener("search", function () { // Obtener el término de búsqueda en minúsculas
             galleryItems.forEach(function (item) {
-                const altText = item.querySelector("img").getAttribute("alt").toLowerCase();
-
-                if (altText.includes(searchTerm)) {
-                    item.style.display = "block";
-                } else {
-                    item.style.display = "none";
-                }
+                const cardBody = item.querySelector("#card-body");
+                item.style.display = "block";
             });
         });
     } catch (error) {

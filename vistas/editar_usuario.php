@@ -25,7 +25,7 @@ mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <!-- Encabezado y enlaces CSS -->
     <link rel="stylesheet" href="../css/editar_usuario.css">
