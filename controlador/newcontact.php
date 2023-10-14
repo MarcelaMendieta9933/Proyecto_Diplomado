@@ -22,18 +22,25 @@ $descripcion = $_POST['descripcion'];
 $sql = "INSERT INTO contactanos (nombre , correo, descripcion) VALUES ('$nombre', '$correo','$descripcion')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "<script> Swal.fire(
-      'Gracias por Contactarnos',
-      'Mensaje Enviado',
-      'success'
-    );
-    
-    setTimeout(function() {
-      window.location='../vistas/inicio.php';
-    }, 1500);
-    </script>";
+  echo "<script> Swal.fire(
+    {icon: 'success',
+    text: 'Gracias por Contactarnos, Mensaje Enviado',
+    showConfirmButton: false}
+  );    
+  setTimeout(function() {
+    window.location='../vistas/pagina_emprendedor.php';
+  }, 1500);
+     </script>";
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+  echo "<script> Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: 'No se logró enviar el comentario'
+  });    
+  setTimeout(function() {
+    window.location='../vistas/pagina_emprendedor.php';
+  }, 2800);
+     </script>";
 }
 // Cierra la conexión
 $conn->close();
