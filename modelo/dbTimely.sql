@@ -8,8 +8,8 @@ id int AUTO_INCREMENT,
 usuario VARCHAR(40),
 nivel VARCHAR(40),
 correo VARCHAR(40),
-contraseña VARCHAR(40),
-token VARCHAR(40),
+contraseña VARCHAR(200),
+token VARCHAR(200),
 PRIMARY KEY(id)
 );
 
@@ -32,32 +32,25 @@ ciudad VARCHAR(40),
 cedula VARCHAR(40),
 telefono VARCHAR(40),
 direccion VARCHAR(40),
+fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY(id)
 );
-
-ALTER TABLE emprendedores
-ADD COLUMN fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
 
 -- Crear Tabla Modelo
 USE bbdd_timely;
 CREATE TABLE modelo(
 id INT AUTO_INCREMENT,
 fk_id_empre INT,
-title_emprendimiento VARCHAR(40),
+title_emprendimiento VARCHAR(200),
 descripcion TEXT,
 productos TEXT,
 imagenes TEXT,
 whatsapp VARCHAR(40),
 logo TEXT,
+fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+fecha_actualizacion DATETIME,
 PRIMARY KEY(id)
 );
-
-ALTER TABLE modelo
-ADD COLUMN fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-ADD COLUMN fecha_actualizacion DATETIME;
-
-ALTER TABLE `modelo` CHANGE `imagenes` `Video` TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL;
-ALTER TABLE `modelo` CHANGE `Video` `video` TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL;
 
 -- Crear Tabla Contactanos
 USE bbdd_timely;
