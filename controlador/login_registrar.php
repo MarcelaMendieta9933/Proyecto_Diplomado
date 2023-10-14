@@ -16,7 +16,6 @@ if(isset($_POST["accion"]))
     $accion = $_POST["accion"];
     $nombre = $_POST["txtusuario"];
     $pass = $_POST["txtpassword"];
-    $correo =$_POST["txtemail"];
     $nivel = "usuario";
 
 
@@ -44,13 +43,24 @@ if(isset($_POST["accion"]))
         }
         else
         {
-            echo "<script> alert('Usuario o contraseña incorrecto. ');window.location= '../vistas/mi_emprendedor.html' </script>"; 
+            echo "<script> Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Usuario o contraseña incorrecto',
+                showConfirmButton: false
+              });
+              setTimeout(function() {
+                window.location='../vistas/mi_emprendedor.html';
+              }, 2800);
+              </script>";; 
         }
     }
 
     //Para registrar
     if($accion == "registrar")
     {
+        
+        $correo = $_POST["txtemail"];
         $queryusuario = mysqli_query($conn,"SELECT * FROM usuarios WHERE usuario = '$nombre'");
         $nr = mysqli_num_rows($queryusuario); 
 
@@ -68,7 +78,7 @@ if(isset($_POST["accion"]))
                     showConfirmButton: false}
                   );    
                   setTimeout(function() {
-                    window.location='../vistas/pagina_emprendedor.php';
+                    window.location='../vistas/mi_emprendedor.html';
                   }, 1500);
                   </script>";            }
             else 
@@ -84,7 +94,7 @@ if(isset($_POST["accion"]))
                 text: 'Este usuario $nombre ya existe '
               });    
               setTimeout(function() {
-                window.location='../vistas/pagina_emprendedor.php';
+                window.location='../vistas/mi_emprendedor.html';
               }, 2800);
               </script>";         }
     } 
