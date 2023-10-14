@@ -39,13 +39,31 @@ if($nr == 0){
         }, 1500);
         </script>";
     } else {
-        echo "Error: " . $sq . "<br>" . $conn->error;
+      echo "<script> Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Hubo algun error al crear el suuario',
+        showConfirmButton: false
+      });
+      setTimeout(function() {
+        window.location='../vistas/pagina_administrador.php';
+      }, 2800);
+      </script>"; 
     }
     // Cierra la conexión
     $conn->close();
     
 }else{
-    echo "<script> alert('No puedes registrar a este usuario: $usuario');window.location= '../vistas/pagina_administrador.php' </script>";
+    echo "<script> Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'No puedes registrar a este usuario: $usuario, ya existe',
+      showConfirmButton: false
+    });
+    setTimeout(function() {
+      window.location='../vistas/pagina_administrador.php';
+    }, 2800);
+    </script>"; 
 }
 ?>
 
