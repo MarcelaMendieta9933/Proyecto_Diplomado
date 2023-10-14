@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+
+<head>
+<script src="dist/sweetalert.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link rel="icon" type="image/x-icon" href="../imagenes/logo.png"/>
+</head>
+
+</html>
+
 <?php
 include("conexion_db.php");
 session_start();
