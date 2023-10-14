@@ -29,9 +29,10 @@ if($nr == 0){
     
     if ($conn->query($sq) === TRUE) {
         echo "<script> Swal.fire(
-          'Usuario creado',
-          'Exitosamenete!!!',
-          'success'
+          {icon: 'success',
+          title: 'Usuario creado',
+          text: 'Exitosamente!!!',
+          showConfirmButton: false}
         );    
         setTimeout(function() {
           window.location='../vistas/pagina_administrador.php';
