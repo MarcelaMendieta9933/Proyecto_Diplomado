@@ -28,7 +28,7 @@ if ($conn->query($sql) === TRUE) {
     showConfirmButton: false}
   );    
   setTimeout(function() {
-    window.location='../vistas/pagina_emprendedor.php';
+    window.location='../vistas/inicio.php';
   }, 1500);
      </script>";
 } else {
@@ -38,7 +38,7 @@ if ($conn->query($sql) === TRUE) {
     text: 'No se logró enviar el comentario'
   });    
   setTimeout(function() {
-    window.location='../vistas/pagina_emprendedor.php';
+    window.location='../vistas/inicio.php';
   }, 2800);
      </script>";
 }
