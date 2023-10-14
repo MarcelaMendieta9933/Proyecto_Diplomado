@@ -52,7 +52,7 @@ if(isset($_POST["accion"]))
               setTimeout(function() {
                 window.location='../vistas/mi_emprendedor.html';
               }, 2800);
-              </script>";; 
+              </script>"; 
         }
     }
 
@@ -80,10 +80,20 @@ if(isset($_POST["accion"]))
                   setTimeout(function() {
                     window.location='../vistas/mi_emprendedor.html';
                   }, 1500);
-                  </script>";            }
+                  </script>";            
+            }
             else 
             {
-                echo "Error: " .$queryregistrar."<br>".mysql_error($conn);
+                echo "<script> Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Hubo algun error al crear el suuario',
+                    showConfirmButton: false
+                  });
+                  setTimeout(function() {
+                    window.location='../vistas/mi_emprendedor.html';
+                  }, 2800);
+                  </script>";
             }
         }
         else
@@ -91,12 +101,14 @@ if(isset($_POST["accion"]))
             echo "<script> Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
-                text: 'Este usuario $nombre ya existe '
+                text: 'Este usuario $nombre ya existe',
+                showConfirmButton: false
               });    
               setTimeout(function() {
                 window.location='../vistas/mi_emprendedor.html';
               }, 2800);
-              </script>";         }
+              </script>";         
+        }
     } 
 }
 ?>
