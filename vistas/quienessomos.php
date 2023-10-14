@@ -58,7 +58,7 @@
 
     <div class="video-section">
         <!-- Aquí puedes insertar tu video -->
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/QJrnOD3SHXU?si=Y9-vBCAjjk3PA1d5"  frameborder="0" allowfullscreen></iframe>
     </div>
 
     <?php include "footer.html"; ?>
