@@ -1,3 +1,5 @@
+--Primero crear BBDD con el comando de CREATE DATABASE bbdd_timely; luego ejecutar con el query
+
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
