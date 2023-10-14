@@ -50,7 +50,7 @@ if(isset($_POST["accion"]))
                 showConfirmButton: false
               });
               setTimeout(function() {
-                window.location='../vistas/pagina_administrador.php';
+                window.location='../vistas/mi_emprendedor.html';
               }, 2800);
               </script>";; 
         }
@@ -78,7 +78,7 @@ if(isset($_POST["accion"]))
                     showConfirmButton: false}
                   );    
                   setTimeout(function() {
-                    window.location='../vistas/pagina_emprendedor.php';
+                    window.location='../vistas/mi_emprendedor.html';
                   }, 1500);
                   </script>";            }
             else 
@@ -94,7 +94,7 @@ if(isset($_POST["accion"]))
                 text: 'Este usuario $nombre ya existe '
               });    
               setTimeout(function() {
-                window.location='../vistas/pagina_emprendedor.php';
+                window.location='../vistas/mi_emprendedor.html';
               }, 2800);
               </script>";         }
     } 
