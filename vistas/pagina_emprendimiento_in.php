@@ -27,20 +27,29 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../imagenes/logo.png"/>
-    <link rel="stylesheet" href="../css/inicio.css"> <!-- cambiar -->
+    <link rel="stylesheet" href="../css/inicio.css">
     <link rel="stylesheet" href="../css/pagina_empredimiento.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <title>Timely | Emprendimiento</title> <!-- cambiar si se puede para traer el nombre del emprendiento -->
+    <title>Timely | Emprendimiento</title> 
+   <style>
+     body {
+            background-color: #C5D2EC; /* Establece el color de fondo de la página completa */
+            margin: 0; /* Asegura que no haya espacios en blanco alrededor del cuerpo */
+            padding: 0;
+        }
+   </style>
 </head>
 <body>
-
-<?php include "nav.html"; ?>
-
     <!-- Button trigger modal -->
-    <div>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Editar Emprendimiento
-        </button>
+    <div class="botones_accion">
+        <br>
+        <button id="volverBtn" class="btn btn-secondary">Volver</button> 
+        <div id="button-right">  
+            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Editar
+            </button>
+            <button id="borrarBtn" data-id="<?php echo $emprendimiento['id']; ?>" class="btn btn-danger">Borrar</button>
+        </div>
     </div>
     
     <!-- Modal -->
@@ -48,7 +57,7 @@ $conn->close();
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Agregar Nuevo Administrador</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Editar Emprendimiento</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     
@@ -73,54 +82,43 @@ $conn->close();
                                 </div>
                             </div>
                             <br>
-                            </div>
-                                <div class="modal-footer">
+                            <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                                 <button type="submit" class="btn btn-primary" name="insertar">Guardar</button>
                             </div>
-
                         </form>
-                    
-                    </div>
-                
+                    </div>               
                 </div>
             
             </div>
     </div>
-    <button id="borrarBtn" data-id="<?php echo $emprendimiento['id']; ?>">Borrar</button>
-    <button id="volverBtn">Volver</button> 
+   
     <div class="container">
         <div class="row justify-content-around">
-            <div class="col-6 informacion_general">
-                <img src="../imagenes/empredimientos/<?php echo $emprendimiento['logo']?>" class="card-img-top" alt="logo empredimiento">
+            <div class="col-4 col-md-4 informacion_general">
+                <img src="../imagenes/empredimientos/<?php echo $emprendimiento['logo']?>" class="card-img-top" id="img_size" alt="logo empredimiento">
             </div>
-            <div class="col-6 informacion_general">
+            <div class="col-8 col-md-8 informacion_general" id="info_general">
                 <h1 class="titulo_empredimiento"><?php echo $emprendimiento['title_emprendimiento'] ?></h1>
                 <p class="descripcion_empredimiento"><?php echo $emprendimiento['descripcion'] ?></p>
                 <div class="contacto_empredimiento" onclick="redireccionar()">
-                    <img src="../imagenes/logoTimely.png" alt="logo_whats">
-            </div>
-                    <a href="https://api.whatsapp.com/send?phone=<?php echo $emprendimiento['whatsapp']?>"><?php echo $emprendimiento['whatsapp']?></a>
+                    <a class="numero_empre" href="https://api.whatsapp.com/send?phone=<?php echo $emprendimiento['whatsapp']?>">
+                        <img src="../imagenes/wso-removebg-preview.png" alt="logo_whats"><?php echo $emprendimiento['whatsapp']?>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 
+    <div class="mensaje_video">
+        Conozca mas del empredimiento en el siguiente video: 
+    </div>
+
     <div class="video-section">
         <!-- Aquí puedes insertar tu video -->    
         <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $emprendimiento['video'];?>?si=NPusF_BoiBJPF2MN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <p>Creditos de youtube.</p>
     </div>
-        
-    <!-- Modal -->
-    <?php 
-        //$query=mysqli_query($conn,"SELECT * FROM emprendedores WHERE fk_id_usu = $id;");
-        //$resultado = mysqli_fetch_array($query);
-
-
-    ?>
-
-    <?php include "footer.html"; ?>
-
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
