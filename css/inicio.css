@@ -107,7 +107,9 @@ body{
 
 .gallery-item {
     position: relative;
-    overflow: hidden;
+    overflow: hidden;   
+    border:10px solid #051840;
+    border-radius: 30px;
 }
 
 .gallery-item img {
@@ -123,11 +125,15 @@ body{
 @media (max-width: 550px) {
     .gallery-item:hover {
         transform: none;
+        border:10px solid #051840;
+        border-radius: 30px;
     }
 }
 @media (min-width: 768px) {
     .gallery-item:hover {
         transform: scale(1.05); 
+        border:10px solid #051840;
+        border-radius: 30px;
     }
 }
 

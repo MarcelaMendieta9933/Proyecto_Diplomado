@@ -33,7 +33,11 @@ document.addEventListener("DOMContentLoaded", async function () {
                 const altText = item.querySelector("img").getAttribute("alt").toLowerCase(); // Obtener las categorías
 
                 if (altText.includes(searchTerm)) {
-                    item.style.display = "block";
+                    item.style.display = "flex";
+                    item.style.position = "relative";
+                    item.style.overflow = "hiden";
+                    item.style.position = "relative";
+
                 } else {
                     item.style.display = "none";
                 }

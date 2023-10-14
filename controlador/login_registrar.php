@@ -16,7 +16,6 @@ if(isset($_POST["accion"]))
     $accion = $_POST["accion"];
     $nombre = $_POST["txtusuario"];
     $pass = $_POST["txtpassword"];
-    $correo =$_POST["txtemail"];
     $nivel = "usuario";
 
 
@@ -44,13 +43,24 @@ if(isset($_POST["accion"]))
         }
         else
         {
-            echo "<script> alert('Usuario o contraseña incorrecto. ');window.location= '../vistas/mi_emprendedor.html' </script>"; 
+            echo "<script> Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Usuario o contraseña incorrecto',
+                showConfirmButton: false
+              });
+              setTimeout(function() {
+                window.location='../vistas/pagina_administrador.php';
+              }, 2800);
+              </script>";; 
         }
     }
 
     //Para registrar
     if($accion == "registrar")
     {
+        
+        $correo = $_POST["txtemail"];
         $queryusuario = mysqli_query($conn,"SELECT * FROM usuarios WHERE usuario = '$nombre'");
         $nr = mysqli_num_rows($queryusuario); 
 
