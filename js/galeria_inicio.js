@@ -11,13 +11,13 @@ document.addEventListener("DOMContentLoaded", async function () {
             emprendimientoDiv.setAttribute('data-tags', emprendimiento.categorias); // Si tienes categorías, puedes asignarlas aquí
             emprendimientoDiv.setAttribute('data-categorias', emprendimiento.categorias); 
             emprendimientoDiv.innerHTML = `
-                <img src="../imagenes/empredimientos/${emprendimiento.logo}" class="card-img-top w-100 h-100" alt="${emprendimiento.categorias}" onclick="location.href='../vistas/pagina_emprendimiento.php?id=${emprendimiento.id}'"">
-                <div class="card-body" id="card-body_id">
-                    <h2 class="card-title">${emprendimiento.title_emprendimiento}</h2>
-                    <p class="card-text">${emprendimiento.descripcion.substring(0, 100)}...</p>
-                    <button onclick="location.href='../vistas/pagina_emprendimiento.php?id=${emprendimiento.id}'" class="btn btn-primary">Ver más</button>
-                </div>
-            `;
+                <img src="../imagenes/empredimientos/${emprendimiento.logo}" class="card-img-top w-100 h-100" alt="${emprendimiento.categorias}" onclick="location.href='../vistas/pagina_emprendimiento.php?id=${emprendimiento.id}'""> `;
+            //     <div class="card-body" id="card-body_id">
+            //         <h2 class="card-title">${emprendimiento.title_emprendimiento}</h2>
+            //         <p class="card-text">${emprendimiento.descripcion.substring(0, 100)}...</p>
+            //         <button onclick="location.href='../vistas/pagina_emprendimiento.php?id=${emprendimiento.id}'" class="btn btn-primary">Ver más</button>
+            //     </div>
+            // `;
             emprendimientosDiv.appendChild(emprendimientoDiv);
         });
 
