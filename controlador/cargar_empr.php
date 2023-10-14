@@ -37,12 +37,36 @@ if (move_uploaded_file($_FILES["logo"]["tmp_name"], $imagenRuta)) {
     $sql = "INSERT INTO modelo (fk_id_empre,title_emprendimiento, descripcion, video, whatsapp, logo, categorias ) VALUES ('$idusuario','$nombre', '$descripcion', '$lastPart', '$whatsapp', '$logoNombre', '$categoria')";
 
     if ($conn->query($sql) === TRUE) {
-        echo '<script>alert("Emprendimiento Creado Exitosamente."); window.location.href="../vistas/pagina_emprendedor.php";</script>';
+        echo "<script> Swal.fire(
+            {icon: 'success',
+            text: 'Emprendimiento Creado Exitosamente!!!',
+            showConfirmButton: false}
+          );    
+          setTimeout(function() {
+            window.location='../vistas/pagina_emprendedor.php';
+          }, 1500);
+          </script>";
     } else {
-        echo "Error al insertar datos: " . $conn->error;
+        echo "<script> Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'No se pude crear emprendimiento '
+          });    
+          setTimeout(function() {
+            window.location='../vistas/pagina_emprendedor.php';
+          }, 2800);
+          </script>";
     }
 } else {
-    echo "Error al cargar la imagen.";
+    echo "<script> Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Error al cargar la imagen.'
+      });    
+      setTimeout(function() {
+        window.location='../vistas/pagina_emprendedor.php';
+      }, 2800);
+      </script>";
 }
 
 }
