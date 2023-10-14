@@ -62,8 +62,9 @@ $conn->close();
                     </div>
                     
                     <div class="modal-body">
-                        <form action="../controlador/newusuario.php" onsubmit="" method="post"  class="row g-3 needs-validation" novalidate>
+                        <form action="../controlador/detalle_update_empren.php" onsubmit="" method="post"  class="row g-3 needs-validation" novalidate>
                             <div class="form-group emprendimiento-info">
+                                <input type="hidden" name="id" value="<?php echo $emprendimiento['id']; ?>">
                                 <label for="nombre">Nombre del Emprendimiento:</label>
                                 <input class="form-control"  type="text" name="nombre" value="<?php echo $emprendimiento['title_emprendimiento'] ?>" required autocomplete="off">
                             </div>
@@ -128,8 +129,12 @@ $(document).ready(function() {
         var id = $(this).data("id");
         
         if (confirm("¿Estás seguro de que deseas eliminar este elemento?")) {
-            $.post("eliminar.php", { id: id }, function(data) {
-                // Manejar la respuesta, por ejemplo, recargar la página o actualizar la lista de elementos.
+            $.post("../controlador/borrar_emprendimiento.php", { id: id }, function(data) {
+                if (data.includes("Exito")) {
+                    window.location.href = '../vistas/pagina_emprendedor.php'; // Redirige a la otra página después de eliminar.
+                } else {
+                    alert('Error al eliminar el usuario: ' + data);
+                }
             });
         }
     });
