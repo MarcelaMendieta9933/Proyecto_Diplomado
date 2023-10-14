@@ -1,6 +1,19 @@
-body{
-    background-color: #C5D2EC;
+*{
+    font-family: Helvetica;
+    margin: 0;
+    padding: 0;
 }
+html, body, .fondo{
+    height: 100%;
+    overflow: hidden;
+}
+.fondo {
+    background-color: #C5D2EC;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
 
 h2
 {
@@ -13,7 +26,6 @@ h2
 .modal-body
 {
     background-color: #e1e2e4;
-    font-family: lato;
    
 }
 

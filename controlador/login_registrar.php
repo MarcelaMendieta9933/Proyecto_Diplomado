@@ -62,9 +62,10 @@ if(isset($_POST["accion"]))
             if(mysqli_query($conn,$queryregistrar))
             {
                 echo "<script> Swal.fire(
-                    'Usuario creado $nombre',
-                    'Exitosamenete!!!',
-                    'success'
+                    {icon: 'success',
+                    title: 'Usuario creado $nombre',
+                    text: 'Exitosamente!!!',
+                    showConfirmButton: false}
                   );    
                   setTimeout(function() {
                     window.location='../vistas/pagina_emprendedor.php';

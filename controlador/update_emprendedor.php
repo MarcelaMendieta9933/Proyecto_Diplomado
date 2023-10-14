@@ -39,9 +39,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($conn->query($sql) === TRUE) {
             echo "<script> Swal.fire(
-                'Usuario creado',
-                'Exitosamenete!!!',
-                'success'
+              {icon: 'success',
+              title: 'Datos Actualizados',
+              text: 'Exitosamente!!!',
+              showConfirmButton: false}
               );    
               setTimeout(function() {
                 window.location='../vistas/pagina_emprendedor.php';

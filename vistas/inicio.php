@@ -40,7 +40,7 @@
     <!-- Barra de búsqueda -->
     <div class="search-bar">
         <form class="d-flex justify-content-center align-items-center" role="search">
-            <input id="search-input" class="form-control" type="search" placeholder="&#128269; Cuentanos ¿en qué estas interesado?" aria-label="Buscar">
+            <input id="search-input" class="form-control" type="search" placeholder="&#128269; Cuentanos ¿en qué estas interesado?" aria-label="Buscar" autocomplete="off">
         </form>
     </div>
 
