@@ -4,9 +4,20 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+    background-color: #C5D2EC;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
 html, body, .fondo{
     height: 100%;
-    overflow: hidden;
 }
 .fondo {
     background-color: #C5D2EC;
@@ -14,40 +25,37 @@ html, body, .fondo{
     width: 100%;
     position: absolute;
 }
-
-/* Estilos para el título */
-h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-/* Estilos para los campos de entrada y los botones */
-.form-group {
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.form-control {
-    width: 90%;
-    padding: 10px;
-    border: 1px solid #ccc;
+/* Estilos para el botón Agregar Producto */
+#add-product {
+    background-color: #051840;
+    color: white;
+    border: none;
+    padding: 10px 20px;
     border-radius: 5px;
     font-size: 16px;
-}
-
-#nuevaContrasena {
+    cursor: pointer;
     margin-top: 10px;
 }
 
-.btn-secondary,
-.btn-primary {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+#add-product:hover {
+    background-color: #03061a;
 }
-/* Estilos para el enlace de redirección a página_administrador.php */
+
+.remove-product {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    float: right;
+}
+
+.remove-product:hover {
+    background-color: #d32f2f;
+}
+
 .link-volver {
     display: block;
     text-align: center;
@@ -60,7 +68,6 @@ h2 {
 .link-volver:hover {
     text-decoration: underline;
 }
-
 .modal-content{
     border: 1px solid black;
 }
@@ -85,12 +92,6 @@ label
     display: flex;
     justify-content: center; 
     align-items: center; 
-    text-align: center;
     height: auto;
     
 }
-
-
-
-
-

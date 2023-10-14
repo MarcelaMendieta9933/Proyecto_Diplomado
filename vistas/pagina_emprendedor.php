@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,31 +18,97 @@
                 include('../controlador/conexion_db.php');
                 session_start();
 
-                if(isset($_SESSION['nombredelusuario']))
+                if(isset($_SESSION['nombredelusuario'],$_SESSION['idusuario']))
                 {
                   $usuarioingresado = $_SESSION['nombredelusuario'];
+                  
                   echo "$usuarioingresado";
+                  $id = $_SESSION['idusuario'];
+                  
                 }
                 else
                 {
                   header('location: ../vistas/mi_emprendedor.html');
                 }
                 ?>  
-                 a Timely</div>
-                <img class="usuario" src="../imagenes/usuario.png" alt="usuario" onclick="PopupUser()">
-                
-            </nav>
-            <form method="POST">
-                <input type="submit" class="close-button" value="Cerrar sesión" name="btncerrar" />
-                </form>
+                <?php 
+                if(isset($_SESSION['idusuario'])){
+                    $id = $_SESSION['idusuario'];
+                    
+                    $queryVerify = mysqli_query($conn,"SELECT * FROM `emprendedores` WHERE fk_id_usu = $id;");
+                    $nr= mysqli_num_rows($queryVerify);
+                    if ($nr == 0) {
+                        // El resultado de la consulta es vacío, redirigir al usuario a registroemprendedor.php
+                        header('location: ../vistas/registroemprendedor.php');
+                        exit(); // Es importante salir del script después de enviar el encabezado de redirección
+                    }
+                }
+                ?>
                 <?php 
                 if(isset($_POST['btncerrar']))
                 {
                     session_destroy();
-                    header('location: ../vistas/mi_emprendedor.html');
+                    header('location: mi_emprendedor.html');
                 }
                 ?> 
-                
+                 a Timely</div>
+                 <!-- Button trigger modal -->
+                        
+                        <button type="button" class="btn btn-outline-light" id="boton" data-bs-toggle="modal" data-bs-target="#exampleModal">
+
+                        </button>
+                        
+                        
+                        <!-- Modal -->
+                        <?php 
+                            $query=mysqli_query($conn,"SELECT * FROM emprendedores WHERE fk_id_usu = $id;");
+                            $resultado = mysqli_fetch_array($query);
+
+
+                        ?> 
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Edita tu Información </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            <form method="post" action="../controlador/update_emprendedor.php" onsubmit="" class="row g-3 needs-validation" >
+                                    
+                                    <div class="form-group">
+                                        <label for="nombre">Nombre Completo:</label>
+                                        <input class="form-control" id="nombre_completo" type="text" value="<?php echo $resultado['nombre_completo'];?>" name="nombre_completo" >
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nombre">Cuidad :</label>
+                                        <input class="form-control" id="cuidad" type="text" value="<?php echo $resultado['ciudad'];?>" name="ciudad" >
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nombre">Cedula :</label>
+                                        <input class="form-control" id="cedula" type="text" value="<?php echo $resultado['cedula'];?>" name="cedula" >
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nombre">Teléfono :</label>
+                                        <input class="form-control" id="telefono" type="text" value="<?php echo $resultado['telefono'];?>" name="telefono" >
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nombre">Dirección :</label>
+                                        <input class="form-control" id="direccion" type="text" value="<?php echo $resultado['direccion'];?>" name="direccion" >
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary" name="insertar">Actualizar</button>
+                                    </div>
+                            </form>
+                            </div>
+                            
+                            </div>
+                        </div>
+                        </div>
+            </nav>
+            <form method="POST">
+                <input type="submit" class="close-button" value="Cerrar sesión" name="btncerrar" />
+                </form>
             <div id="carouselControls" class="carousel slide slider-frame d-block w-100" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -67,19 +133,27 @@
                     <span class="visually-hidden">Siguiente</span>
                 </button>
             </div>
-
-            <div class="cuadros" id="cuadro_empredimiento" onclick="agregarCuadro(this)">
-                crear emprendimiento
-                <!-- <div class="cuadro" id="cuadro1" onclick="agregarCuadro(this)">
-                    <input type="text" placeholder="Ingrese contenido" class="contenido">
-                </div> -->
+            
+            
+            <div class="mensaje_empredimientos">
+                Mis emprendimientos: 
             </div>
+            <div class="cuadros" id="cuadro_empredimiento" onclick="redireccionar()">
+                Crear emprendimiento
+            </div>
+            <div class="gallery" id="emprendimientos">
+                <script src="../js/galeria_in.js"></script>
+            </div>
+            
         </div>
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src="../js/ventana_sesion.js"></script>
 <script>
+    function redireccionar() {
+    window.location.href = 'agregar_empr.php';
+  }
 //     let contador = 1;
 
 // function agregarCuadro(cuadroPadre) {
@@ -99,3 +173,4 @@
 // }
 </script>
 </html>
+

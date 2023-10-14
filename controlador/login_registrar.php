@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+
+<head>
+<script src="dist/sweetalert.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link rel="icon" type="image/x-icon" href="../imagenes/logo.png"/>
+</head>
+
+</html>
 <?php
 
 include('conexion_db.php');
@@ -7,7 +16,6 @@ if(isset($_POST["accion"]))
     $accion = $_POST["accion"];
     $nombre = $_POST["txtusuario"];
     $pass = $_POST["txtpassword"];
-    $correo =$_POST["txtemail"];
     $nivel = "usuario";
 
 
@@ -22,6 +30,7 @@ if(isset($_POST["accion"]))
         { 
             session_start();
             $_SESSION['nombredelusuario']=$nombre;
+            $_SESSION['idusuario']=$mostrar['id'];
             if($mostrar['nivel']=='usuario') 
             {
                 header("Location: ../vistas/pagina_emprendedor.php");
@@ -34,13 +43,24 @@ if(isset($_POST["accion"]))
         }
         else
         {
-            echo "<script> alert('Usuario o contraseña incorrecto. ');window.location= '../vistas/mi_emprendedor.html' </script>"; 
+            echo "<script> Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Usuario o contraseña incorrecto',
+                showConfirmButton: false
+              });
+              setTimeout(function() {
+                window.location='../vistas/mi_emprendedor.html';
+              }, 2800);
+              </script>";; 
         }
     }
 
     //Para registrar
     if($accion == "registrar")
     {
+        
+        $correo = $_POST["txtemail"];
         $queryusuario = mysqli_query($conn,"SELECT * FROM usuarios WHERE usuario = '$nombre'");
         $nr = mysqli_num_rows($queryusuario); 
 
@@ -51,8 +71,16 @@ if(isset($_POST["accion"]))
             
             if(mysqli_query($conn,$queryregistrar))
             {
-                echo "<script> alert('Usuario registrado: $nombre');window.location= '../vistas/mi_emprendedor.html' </script>";
-            }
+                echo "<script> Swal.fire(
+                    {icon: 'success',
+                    title: 'Usuario creado $nombre',
+                    text: 'Exitosamente!!!',
+                    showConfirmButton: false}
+                  );    
+                  setTimeout(function() {
+                    window.location='../vistas/mi_emprendedor.html';
+                  }, 1500);
+                  </script>";            }
             else 
             {
                 echo "Error: " .$queryregistrar."<br>".mysql_error($conn);
@@ -60,8 +88,15 @@ if(isset($_POST["accion"]))
         }
         else
         {
-            echo "<script> alert('No puedes registrar a este usuario: $nombre');window.location= '../vistas/mi_emprendedor.html' </script>";
-        }
+            echo "<script> Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Este usuario $nombre ya existe '
+              });    
+              setTimeout(function() {
+                window.location='../vistas/mi_emprendedor.html';
+              }, 2800);
+              </script>";         }
     } 
 }
 ?>

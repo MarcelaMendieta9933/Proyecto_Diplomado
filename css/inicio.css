@@ -1,3 +1,7 @@
+*{
+    font-family: Helvetica;
+}
+
 body{
     background-color: #C5D2EC;
 }
@@ -103,7 +107,9 @@ body{
 
 .gallery-item {
     position: relative;
-    overflow: hidden;
+    overflow: hidden;   
+    border:10px solid #051840;
+    border-radius: 30px;
 }
 
 .gallery-item img {
@@ -119,11 +125,15 @@ body{
 @media (max-width: 550px) {
     .gallery-item:hover {
         transform: none;
+        border:10px solid #051840;
+        border-radius: 30px;
     }
 }
 @media (min-width: 768px) {
     .gallery-item:hover {
         transform: scale(1.05); 
+        border:10px solid #051840;
+        border-radius: 30px;
     }
 }
 
@@ -138,3 +148,15 @@ body{
     padding: 5px 10px;
     font-size: 14px;
 }
+
+#img_size
+{
+    width: 450px;
+    height: 420px;
+}
+/* Tamaño de letra para pantallas más pequeñas */
+@media (max-width: 576px) {
+    #card-body_id {
+        width: 250px;
+        }  
+    }

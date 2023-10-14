@@ -14,28 +14,31 @@ include 'conexion_db.php';
 
 // Obtiene los datos del formulario
 
-$usuario = $_POST['usuario'];
-$correo = $_POST['correo'];
-$nivel = $_POST['nivel'];
-$contraseña = $_POST['contraseña'];
+$nombre_completo = $_POST['nombre_completo'];
+$ciudad = $_POST['ciudad'];
+$cedula = $_POST['cedula'];
+$telefono = $_POST['telefono'];
+$direccion = $_POST['direccion'];
 
-$queryusuario = mysqli_query($conn,"SELECT * FROM usuarios WHERE usuario = '$usuario'");
-$nr = mysqli_num_rows($queryusuario); 
 
-if($nr == 0){
-    $pass_fuerte = password_hash($contraseña, PASSWORD_BCRYPT);
+session_start();
+if(isset($_SESSION['idusuario']))
+ {
+    
+    $idusuario = $_SESSION['idusuario'];
+    
     // Inserta los datos en la base de datos
-    $sq = "INSERT INTO usuarios (usuario , correo, nivel,contraseña) VALUES ('$usuario', '$correo','$nivel','$pass_fuerte')";
+    $sq = "INSERT INTO emprendedores (fk_id_usu, nombre_completo , ciudad, cedula,telefono,direccion) VALUES ('$idusuario','$nombre_completo', '$ciudad','$cedula','$telefono','$direccion')";
     
     if ($conn->query($sq) === TRUE) {
         echo "<script> Swal.fire(
           {icon: 'success',
-          title: 'Usuario creado',
+          title: 'Datos creado',
           text: 'Exitosamente!!!',
           showConfirmButton: false}
         );    
         setTimeout(function() {
-          window.location='../vistas/pagina_administrador.php';
+          window.location='../vistas/pagina_emprendedor.php';
         }, 1500);
         </script>";
     } else {
@@ -43,10 +46,9 @@ if($nr == 0){
     }
     // Cierra la conexión
     $conn->close();
+                                
+ }
+   
     
-}else{
-    echo "<script> alert('No puedes registrar a este usuario: $usuario');window.location= '../vistas/pagina_administrador.php' </script>";
-}
+
 ?>
-
-

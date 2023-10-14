@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
     <link rel="icon" type="image/x-icon" href="../imagenes/logo.png"/>
@@ -9,7 +10,7 @@
     <div class="cajafuera">
     <div class="formulariocaja">
         </a>
-        <button type="button" class="close-button" aria-label="Cerrar"><a href="inicio.php" class="close-button-redireccion">X</a></button>
+        <button type="button" class="close-button" aria-label="Cerrar"><a href="inicio.php" class="close-button-redireccion">╳</a></button>
         <div class="botondeintercambiar">
             <div id="btnvai"></div>
              <button type="button" class="botoncambiarcaja" onclick="loginvai()">Login</button>
@@ -21,9 +22,9 @@
 		<!--Formulario para el login -->
         <form id="frmlogin" class="grupo-entradas" method="POST" action="../controlador/login_registrar.php">
         <input type="hidden" name="accion" value="login">
-        <input type="text" class="cajaentradatexto" placeholder="&#128273 Ingresar usuario" name="txtusuario" required>
-        <input type="password" class="cajaentradatexto" placeholder="&#128274 Ingresar contraseña" name="txtpassword" required>
-        <input type="checkbox" class="checkboxvai"><span>Recordar contraseña</span>
+        <input type="text" class="cajaentradatexto" placeholder="&#128273 Ingresar usuario" name="txtusuario" required autocomplete="off">
+        <input type="password" class="cajaentradatexto" placeholder="&#128274 Ingresar contraseña" name="txtpassword" required autocomplete="off">
+       
         <button type="submit" class="botonenviar" name="btnloginx">Iniciar sesión</button>
         </form>
         <!--Formulario para registrar --> 
@@ -31,9 +32,9 @@
         <input type="hidden" name="accion" value="registrar">
         <input type="text" class="cajaentradatexto" placeholder="&#128273 Ingresar usuario" required 
         name="txtusuario">
-        <input type="password" class="cajaentradatexto" placeholder="&#128274 Ingresar contraseña" required name="txtpassword">
-        <input type="email" class="cajaentradatexto" placeholder="📧 Ingresar correo electrónico" required name="txtemail">
-        <input type="checkbox" class="checkboxvai"><span>He leído y acepto los términos y condiciones de uso.</span>
+        <input type="password" class="cajaentradatexto" placeholder="&#128274 Ingresar contraseña" required name="txtpassword" required autocomplete="off">
+        <input type="email" class="cajaentradatexto" placeholder="📧 Ingresar correo electrónico" required name="txtemail" required autocomplete="off">
+        
         <button type="submit" class="botonenviar" name="btnregistrarx">Registrar</button>
         </form>
     

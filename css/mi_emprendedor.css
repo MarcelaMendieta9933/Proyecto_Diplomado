@@ -2,7 +2,7 @@
 {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: Helvetica;
 	font-size:14px;
 }
 .pagprincipal
@@ -101,7 +101,7 @@ h1
     padding: 10px 30px;
     cursor: pointer;
     display: block;
-    margin: auto;
+    margin: 20px auto;
 	background-color: #C5D2EC;
     border: 0;
     outline: none;
